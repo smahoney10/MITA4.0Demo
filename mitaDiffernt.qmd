@@ -1,0 +1,27 @@
+<section id="How is MITA 4.0 Different?" class="level1">
+<h1>How is MITA 4.0 Different?</h1>
+  <p>MITA 4.0 builds on MITA 3.0 to support Medicaid’s mission by helping states modernize their business processes and technology systems to improve the administration of their Medicaid programs. MITA 4.0 evolves and refines the MITA framework to better meet the changing needs of State Medicaid Agencies.</p>
+ <style>
+    img {
+      cursor: pointer;
+    }
+  </style>
+<body>
+  <p>Click the image below to learn more:</p>
+  <img id="switchableImage" src="media/MITADif1.svg" alt="Image 1" class="img-fluid" style="display: block; margin: auto;" width="1500" height="1125">
+
+  <script>
+    // JavaScript to handle the image switching
+    const imageElement = document.getElementById('switchableImage');
+    const image1 = 'media/MITADif1.svg'; // Path to the first image
+    const image2 = '../media/MITADif2.svg'; // Path to the second image
+
+    imageElement.addEventListener('click', () => {
+      // Check the current image source and toggle between the two images
+      if (imageElement.src.includes(image1)) {
+        imageElement.src = image2;
+      } else {
+        imageElement.src = image1;
+      }
+    });
+  </script>

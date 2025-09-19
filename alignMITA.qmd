@@ -1,0 +1,343 @@
+---
+title: "State Self-Assessment Playbook"
+subtitle: "CMS Medicaid Information Technology Architecture (MITA) 4.0"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    css: styles.css
+    theme: default
+---
+
+## Introduction
+
+The MITA State Self-Assessment (SS-A) guides your State Medicaid Agency (SMA) to describe current operations and plan for future improvements. The SS-A helps align your Medicaid Enterprise System (MES) with CMS and State prioritized outcomes, MITA's capabilities (ORBIT), and Federal requirements for enhanced funding.
+
+
+![](media/playbookCircle.svg)
+
+## The SS-A Plays {#ssa-plays}
+
+1. [Align MITA to your Medicaid enterprise](#play-1)
+2. [Prepare your team to complete the SS-A](#play-2)
+3. [Focus on the capabilities that drive your goals](#play-3)
+4. [Assess the maturity of your MES capabilities](#play-4)
+5. [Connect the capabilities to your MES modules](#play-5)
+6. [Envision the ideal state of your MES modules](#play-6)
+7. [Map your path to transformation](#play-7)
+8. [Request advanced funding to support your transformation](#play-8)
+9. [Take off on your journey to transformation](#play-9)
+
+## Play 1: Align MITA to your Medicaid Enterprise {#play-1}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- SMA staff have a common understanding of the SS-A
+- SMA understands how MITA aligns with agency vision and strategic goals
+- SMA staff are aligned on five-year goals for MES transformation
+
+### Key Actions {.actions}
+
+- Review influences on modernization initiatives (mission, plans, priorities, statutes, regulations)
+- Determine five-year MES transformation goals and scope
+- Develop objectives and milestones to measure progress
+
+### Key Players {.players}
+
+- State Medicaid executives
+- Relevant SMA staff (Director, IT, Compliance, Procurement, Division Heads)
+
+### Key Questions {.questions}
+
+- How will policies and programs influence MES transformation?
+- How will state priorities shape transformation goals?
+- Is the transformation enterprise-wide or capability-specific?
+- What funding is available and how will it impact scope?
+- What are the main drivers for transformation?
+- Which stakeholders need to be engaged?
+- How will progress be measured?
+
+### References {.references}
+
+- SS-A Playbook
+- MITA Maturity Model
+- Medicaid State Plan
+- Other State Medicaid Program Documents
+
+:::
+
+## Play 2: Prepare your team to complete the SS-A {#play-2}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- SS-A team is established, with a team lead selected
+- Team has approval to move forward
+- Team follows SMA processes for project startup
+
+### Key Actions {.actions}
+
+- Establish SS-A team and lead
+- Complete and submit APD for funding and approval
+- Initiate SS-A project per SMA processes
+
+### Key Players {.players}
+
+- State Medicaid executives
+- SS-A team
+
+### Key Questions {.questions}
+
+- Who has the needed information?
+- Who will lead the SS-A team?
+- How will oversight and alignment be managed?
+- What communication strategies will be used?
+- Is additional support required?
+
+### References {.references}
+
+- SS-A Playbook
+- SMA project processes
+- State procurement policies
+- APD template and guidance
+
+:::
+
+## Play 3: Focus on the capabilities that drive your goals {#play-3}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Identify relevant capability domains for transformation goals
+- Identify subject matter experts for SS-A
+- Gather people and information needed for SS-A
+
+### Key Actions {.actions}
+
+- Select capability domains using MITA Capability Domain Map and transformation goals
+- Map state-specific capabilities using MITA Capability Meta-Model
+
+### Key Players {.players}
+
+- SS-A team
+- Enterprise architects
+- Capability domain subject matter experts
+
+### Key Questions {.questions}
+
+- Which subject matter experts are needed?
+- Which capability domains to focus on?
+- What state-specific capabilities should be included?
+
+### References {.references}
+
+- SS-A Playbook
+- MITA Capability Domain Map
+- MITA Capability Meta-Model
+- SMA transformation goals
+
+:::
+
+## Play 4: Assess the maturity of your MES Capabilities {#play-4}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Know current and desired maturity levels for capability domains
+- Document maturity for each domain
+- Identify gaps between current and desired maturity
+
+### Key Actions {.actions}
+
+- Assess maturity using SS-A Tool or MITA Maturity Models
+- Generate outputs for each domain
+- Identify gaps between current and desired maturity
+
+### Key Players {.players}
+
+- SS-A team
+- Medicaid program subject matter experts
+- Capability domain subject matter experts
+
+### Key Questions {.questions}
+
+- What are the current maturity levels?
+- What are the desired maturity levels?
+- Which experts are needed to validate maturity?
+- Where are the gaps?
+
+### References {.references}
+
+- SS-A Playbook
+- SS-A Tool
+- MITA Maturity Models
+
+:::
+
+## Play 5: Connect the capabilities to your MES modules {#play-5}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Know which capability domains support MES modules
+- Decide which MES modules to prioritize for transformation
+
+### Key Actions {.actions}
+
+- Decide which MES modules to update
+- Determine which capability domains support each module
+- Prioritize modules for updating
+
+### Key Players {.players}
+
+- SS-A team
+- IT team
+- Capability domain subject matter experts
+- MES module subject matter experts
+
+### Key Questions {.questions}
+
+- Which MES modules support the needed capabilities?
+- Which modules to focus on?
+- What criteria for prioritization?
+- How do transformation drivers influence prioritization?
+
+### References {.references}
+
+- SS-A Playbook
+- SS-A outputs
+- SMA transformation goals
+- MITA Capability Domain Map
+
+:::
+
+## Play 6: Envision the Ideal State of your MES modules {#play-6}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Understand how to get from current to desired operations
+- Gather documentation needed for APDs
+
+### Key Actions {.actions}
+
+- Document current state of operations for MES modules
+- Document desired state of operations
+- Document gaps between current and desired state
+
+### Key Players {.players}
+
+- SS-A team
+- MES module subject matter experts
+
+### Key Questions {.questions}
+
+- What is the ideal state of operations?
+- What are possible risks or challenges?
+- What resources and funding are needed?
+
+### References {.references}
+
+- SS-A Playbook
+- SMA transformation goals
+- SS-A outputs
+- MITA Concept of Operations guidance
+
+:::
+
+## Play 7: Map your path to transformation {#play-7}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Five-year roadmap to achieve MES transformation goals
+- Know which MES modules to transform and when
+- Plan to advance MES from current to desired maturity
+
+### Key Actions {.actions}
+
+- Document transformation goals and objectives for MES modules over five years
+- Explain how requirements for enhanced funding will be met
+- Develop proposed budget for roadmap steps
+
+### Key Players {.players}
+
+- SS-A team
+- State Medicaid executives
+- MES module subject matter experts
+- State financial analyst
+
+### Key Questions {.questions}
+
+- How does the roadmap align with transformation goals?
+- How will progress be measured?
+- How will progress be communicated?
+- How to ensure stakeholder support?
+
+### References {.references}
+
+- SS-A Playbook
+- SS-A outputs
+- SMA MES transformation goals
+
+:::
+
+## Play 8: Request Advanced Funding to Support Your Transformation {#play-8}
+
+::: {.play-section}
+
+### Objectives {.objectives}
+
+- Complete APDs to request advanced funding for transformation activities
+
+### Key Actions {.actions}
+
+- Determine APD type for each activity
+- Complete and submit APD using appropriate template and guidance
+
+### Key Players {.players}
+
+- CMS State Officer
+- Acquisition subject matter experts
+- Policy subject matter experts
+- State financial analyst
+
+### Key Questions {.questions}
+
+- How will requirements for enhanced funding be met?
+- How does the funding request align with priorities?
+- What acquisition and contracting activities are required?
+- What are staffing requirements and costs?
+- What is the proposed budget?
+
+### References {.references}
+
+- MITA Roadmap
+- CMS APD template and guidance
+
+:::
+
+## Play 9: Take Off on Your Journey to Transformation {#play-9}
+
+This playbook led you through the SS-A process from aligning on common goals to requesting advanced funding. You understand your current state, your destination, and your path forward. 
+
+Now, move from planning to development:
+
+- Mature MES modules
+- Measure progress
+- Update your MITA Roadmap as priorities change
+
+Keeping your roadmap up to date ensures your SMA stays on course and reaches its transformation goals.
+
+## Summary
+
+The State Self-Assessment Playbook provides a structured approach to MITA implementation through nine distinct plays. Each play builds upon the previous one, creating a comprehensive framework for Medicaid Enterprise System transformation that aligns with federal requirements and state priorities.

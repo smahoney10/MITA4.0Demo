@@ -1,0 +1,80 @@
+project:
+  type: book
+  output-dir: public
+
+
+book:
+  title: "Medicaid Information Technology Architecture"
+  output-file: "MITADemo"
+  search: true
+  
+  downloads: [docx, pdf]
+  
+  chapters:
+    - part:  Introduction to MITA 4.0
+      chapters:
+      - text: What is MITA?
+        file: index.qmd
+      - text: Why Adopt MITA 4.0?
+        file: mitaAdopt.qmd
+      - text: How is MITA 4.0 different?
+        file: mitaDiffernt.qmd
+    - text: "---"
+    - part: State Self-Assessment Playbook
+      file: alignMITA.qmd
+    - text: "---"
+    - part: Business Architecture
+      chapters:
+      - text: Business Architecture Introduction
+        file: 2-1BusinessArchitectureIntroduction.qmd
+      - text: MITA Capability Model
+        file: capabilityModel.qmd  
+      - text: Concept of Operations
+        file: conops.qmd
+      - text: Business Process Model
+        file: businessProcessModel.qmd
+
+    - text: "---"
+    - part: Information Architecture
+    - text: "---"  
+    - part: Technical Architecture
+    - text: "---"
+    - part: Artifacts and References
+      chapters:
+      - text: Standards and Conditions 
+        file: standardsAndConditions.qmd
+    - text: "---"
+    - part: Help Improve this Content
+
+
+  navbar:
+    background: "#015493"
+    right:
+      - text: "4.0"
+
+  page-footer: "© 2025 [The MITRE Corporation](mailto:jirving@mitre.org) / For Internal Use Only"
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    number-sections: false
+
+
+  docx:
+    toc: true
+    number-sections: false
+    highlight-style: github
+
+  pdf:
+    toc: true
+    number-sections: false
+    colorlinks: true
+
+
+
+
+
+

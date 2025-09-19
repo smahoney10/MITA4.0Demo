@@ -1,0 +1,2978 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={MITA 4.0},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{MITA 4.0}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\chapter{What is MITA}\label{what-is-mita}
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/mitaLogo/mitaLogo.png}}
+
+The Medicaid Information Technology Architecture (MITA) Framework is an
+initiative by the Centers for Medicare \& Medicaid Services (CMS) in
+partnership with State Medicaid Agencies (SMAs) and Medicaid systems
+vendors. It aims to establish national guidance and best practice
+references for processes, data standards, and technologies that
+facilitate planing and enhance program administration for State Medicaid
+Enterprises. Building upon the foundation of previous versions, MITA 4.0
+supports the Medicaid mission and goals by facilitating integrated
+business and information technology transformations. This version
+refines, refocuses, and repurposes MITA to better align with the
+evolving needs of SMAs.
+
+MITA 4.0 introduces several new approaches to enhance its relevance and
+accessibility, with the goal of making it more meaningful for
+stakeholders while streamlining processes to reduce the burden on state
+agencies. The framework incorporates various state agency viewpoints to
+improve efficiency and better align with the Advanced Planning Document
+process, certification outcomes, and state agency acquisition processes.
+Additionally, MITA 4.0 provides guidance that reflects current
+healthcare and IT trends, ensuring that it remains at the forefront of
+technological advancements.
+
+By focusing on these enhancements, MITA 4.0 ensures that technology
+decisions align with Medicaid business needs, optimizing adaptability,
+flexibility, interoperability, and data sharing. This evolution enables
+significant improvements in policy, decision-making, and daily
+operations, ultimately advancing the capabilities of State Medicaid
+Enterprises.
+
+\begin{itemize}
+\tightlist
+\item
+  MITA Framework is a consolidation of principles, models, and
+  guidelines that combine to form a template for the States to use to
+  develop their own enterprise architectures.
+\item
+  MITA processes provide guidance for State Medicaid Enterprise to use
+  in adopting the MITA Framework through shared leadership,
+  collaboration, and reuse of solutions.
+\item
+  MITA planning guidelines help States prepare the MITA State
+  Self-Assessment (SS-A) and Roadmap to develop enterprise architectures
+  to align to and advance increasingly in MITA maturity for business,
+  architecture, and data. The guidelines serve as the basis for a
+  state's requests for appropriate Federal Financial Participation (FFP)
+  for their Medicaid Management Information Systems (MMIS) as well as
+  Medicaid Information Technology (IT) system(s) projects related to
+  eligibility determination and enrollment functions.
+\end{itemize}
+
+\section{Seven Standards and
+Conditions}\label{seven-standards-and-conditions}
+
+Under sections 1903(a)(3)(A)(i) and 1903(a)(3)(B) of the Social Security
+Act, CMS has issued new standards and conditions that it expects States
+to adhere to in order for Medicaid technology investments (including
+eligibility systems, as well as traditional claims processing systems)
+to be eligible for enhanced federal matched funds. The intent is to
+foster better collaboration with States, reduce unnecessary paperwork,
+and focus attention on the key elements of success for modern systems
+development and deployment. The Seven Standards and Conditions consist
+of the following:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Modularity Standard:} Uses a modular, flexible approach to
+  systems development, including the use of open interfaces and exposed
+  Application Programming Interfaces (API); the separation of business
+  rules from core programming; and the availability of business rules in
+  both human and machine-readable formats. The States commit to formal
+  system development methodology and open, reusable system architecture.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    MITA Condition --States align to and advance increasingly in MITA
+    maturity for business, architecture, and data.
+  \item
+    Industry Standards Condition -- Ensures alignment with, and
+    incorporation of, industry standards: the Health Insurance
+    Portability and Accountability Act of 1996 (HIPAA) security, privacy
+    and transaction standards; accessibility standards established under
+    section 508 of the Rehabilitation Act, or standards that provide
+    greater accessibility for individuals with disabilities, and
+    compliance with Federal Civil Rights laws; standards adopted by the
+    Secretary under section 1104 of the Affordable Care Act; and
+    standards and protocols adopted by the Secretary under section 1561
+    of the Affordable Care Act.
+  \item
+    Leverage Condition -- State solutions should promote sharing,
+    leverage, and reuse of Medicaid technologies and systems within and
+    among States.
+  \item
+    Business Results Condition -- Systems should support accurate and
+    timely processing of claims (including claims of eligibility),
+    adjudications, and effective communications with providers,
+    beneficiaries, and the public.
+  \item
+    Reporting Condition -- Solutions should produce transaction data,
+    reports, and performance information that contributes to program
+    evaluation, continuous improvement in business operations, and
+    transparency and accountability.
+  \item
+    Interoperability Condition -- Systems must ensure seamless
+    coordination and integration with the Exchanges (whether run by the
+    state or federal government), and allow interoperability with Health
+    Information Exchange (HIE), public health agencies, human services
+    programs, and community organizations providing outreach and
+    enrollment assistance services.
+  \end{itemize}
+\end{itemize}
+
+\section{MITA 4.0 Goals}\label{mita-4.0-goals}
+
+\begin{itemize}
+\tightlist
+\item
+  Develop seamless and integrated systems that communicate effectively
+  to achieve common Medicaid goals through interoperability and common
+  standards.
+\item
+  Promote an environment that supports flexibility, adaptability, and
+  rapid response to changes in programs and technology.
+\item
+  Promote an enterprise view that supports enabling technologies that
+  align with Medicaid business processes and technologies.
+\item
+  Provide data that is timely, accurate, usable, and easily accessible
+  in order to support analysis and decision making for health care
+  management and program administration.
+\item
+  Provide performance measurement for accountability and planning.
+\item
+  Coordinate with public health and other partners to integrate health
+  outcomes within the Medicaid community.
+\end{itemize}
+
+\section{MITA 4.0 Design Principles}\label{mita-4.0-design-principles}
+
+During the development of MITA 4.0, workgroup participants identified a
+set of core principles designed to prioritize updates MITA 3.0 that make
+MITA more meaningful and accessible to SMAs. These principles ensure
+that MITA remains a relevant and valuable tool for State Medicaid
+Agencies and their stakeholders.
+
+\textbf{Define Clear Linkages Between Capabilities and Outcomes}:
+Establish clear definitions for both MITA Capabilities and Outcomes, and
+articulate the relationship between outcomes and the MITA architectures.
+This principle ensures that every capability is directly aligned with
+desired outcomes, linking strategic objectives with operational
+execution in a coherent framework.
+
+\textbf{Business-Driven Transformation}: Define business transformations
+with a focus on aligning IT solutions with both common and unique state
+needs. This principle ensures that technology initiatives are directly
+informed by business objectives, leading to more effective and tailored
+solutions.
+
+\textbf{Standards First}: Promote data and technical standards to
+improve IT development cost-effectiveness. By prioritizing standards, we
+aim to streamline processes and reduce complexity, ultimately enhancing
+interoperability and efficiency.
+
+\textbf{Reduce Burden on SMAs}: Simplify processes and requirements to
+alleviate the administrative load on State Medicaid Agencies, enabling
+them to focus more on service delivery and less on compliance.
+
+\textbf{Enable Automation}: Encourage the adoption of automated
+processes to increase efficiency and accuracy in Medicaid operations,
+reducing manual intervention and the potential for errors.
+
+\textbf{Release Guidance Aligned with Current Trends}: Provide guidance
+that reflects the latest trends in healthcare and IT, ensuring that MITA
+4.0 remains relevant and forward-looking in its approach to Medicaid
+management.
+
+\textbf{Integrate with Other Activities}: Enhance the integration of
+MITA with related activities such as APD development, Certification,
+T-MSIS reporting, and state procurement processes. This principle aims
+to create a cohesive framework that supports comprehensive Medicaid
+management and aligns with broader state and federal initiatives.
+
+\textbf{Transition to a Web-Enabled Presentation}: Move from the static,
+PDF-based MITA 3.0 to a dynamic, web-enabled format. This principle
+facilitates easier maintenance and continuous improvement by the
+community, allowing for real-time updates and enabling stakeholders to
+access the most current information. By fostering a collaborative
+environment, we encourage the sharing of insights and innovations,
+making MITA a more robust and adaptable framework for all users.
+
+These principles are foundational to the development and implementation
+of MITA 4.0, ensuring it effectively supports the evolving needs of
+Medicaid operations.
+
+\chapter{Versions of MITA}\label{versions-of-mita}
+
+--- dev a change matrix showing dif between versions ---
+
+\section{Concepts}\label{concepts}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Outcomes}: Define what SMAs aim to achieve through the
+  implementation of MITA.
+\item
+  \textbf{Business Process Model}: Define common business processes for
+  the Medicaid Enterprise.
+\item
+  \textbf{Maturity Model}: Illustrate the maturation of Medicaid
+  operations over time.
+\item
+  \textbf{Capability Matrices}: Align business, information, and
+  technical capabilities with the Maturity Model.
+\item
+  \textbf{State Self-Assessment (SS-A)}: Represent current and future
+  business, information, and technical capabilities.
+\end{itemize}
+
+MITA 4.0 ensures that technology decisions align with Medicaid business
+needs, optimizing adaptability, flexibility, interoperability, and data
+sharing. This evolution enables significant improvements in policy,
+decision-making, and daily operations. Explore the MITA 4.0 Framework to
+advance your State Medicaid Enterprise.
+
+\part{Welcome}
+
+\chapter{Quick Reference Guide}\label{quick-reference-guide}
+
+\chapter{MITA Capability Model}\label{mita-capability-model}
+
+\section{Introduction to Business Capability
+Models}\label{introduction-to-business-capability-models}
+
+A capability model is a conceptual framework that outlines the key
+capabilities an organization needs to achieve its strategic objectives.
+It provides a comprehensive view of what an organization can do and
+helps identify areas for improvement or investment. In the context of an
+orchestra, a capability model might help the orchestra identify the set
+of skills and resources, or other types of capabilities it needs to
+perform a symphony. Just like an orchestra needs well practiced
+musicians, sheet music, instruments, a conductor, and an audience to
+produce a great symphony, a State Medicaid Agency (SMA) needs its
+Medicaid Enterprise System (MES) to employ or develop specific
+capabilities to deliver its services effectively, efficiently, and
+economically to its enrollees and providers.
+
+The concept of a business capability is extensively used within
+enterprise architecture modeling and has been broadly used within
+Business Capability Models as a tool to better align the business
+strategy and information technology of both private sector and
+governmental organizations since they emerged in the mid-2000s. One
+example comes from the TOGAF Standard, a well-known standard in
+enterprise architecture. Like most architecture frameworks TOGAF defines
+a capability as something a business can do to meet its goals. This
+focuses a strategic lens of an organization on ``what'' it needs to
+achieve its goals, rather than ``how'' those goals are achieved. This
+perspective allows for business planning from different viewpoints,
+facilitating strategic alignment and operational efficiency.
+
+SMA business architects, technologists, systems analysts, executives,
+managers, and program staff can use this same modeling approach to
+represent the functional components of their Medicaid Enterprise System
+(MES) in ways that can help reveal gaps in their systems and provide
+insights on what new or enhanced capabilities might be needed to close
+those gaps.
+
+By focusing on capabilities, SMAs can better align their information and
+technology resources and processes with their strategic business goals,
+ultimately improving their insight into how to improve the outcomes
+their Medicaid Enterprise Architecture produces.
+
+\subsection{Purpose}\label{purpose}
+
+Understanding the how the MITA Capability Model works is important to
+obtaining the most value out of many of the other tools and artifacts in
+the MITA framework, such as the MITA Maturity Model (MMM) and the
+Business Process Model (BPM). The MITA Capability Model provides a
+structured way for SMAs to identify, conceptually model, and improve the
+capabilities needed for efficient Medicaid operations.
+
+It is important to note that MITA 4.0 does not endeavor to specify all
+of the capabilities SMA's may need to administer Medicaid programs;
+instead, this version of MITA focuses on the capabilities that are most
+closely oriented towards achieving the CMS-required outcomes. In this
+way MITA 4.0 provides a reference model for SMAs to model other
+capabilities that may be needed to achieve their other goals such as
+state specific outcomes, or other state priorities while providing more
+guidance within the MITA Framework to support modular.
+
+\subsection{Update to MITA 3.0}\label{update-to-mita-3.0}
+
+MITA 3.0 defined a capability as the level of maturity of a set of
+business processes within a business category. By focusing on ``how''
+MES operate MITA 3.0 helped SMA's identify ways to improve and mature
+their business processes, but it did not link those processes with the
+outcomes they are intended to achieve or ensure better alignment of the
+information and technical architectures to business outcomes. The
+addition of the MITA capability model to the MITA 4.0 business
+architecture addresses that by providing the conceptual linkages needed
+to elevate the strategic vantage point of the MITA Framework. To guide
+this change, we present within this chapter a definition, description,
+and approach to modeling business capabilities, based on the widely used
+capability models contextualized for Medicaid Enterprises.
+
+The business processes that operationalize MITA capabilities remain
+foundational to characterizing the business architecture, and are by
+definition a constituent part of any MITA capability. They provide
+essential information on how capabilities are operationalize and should
+continue to be a routinely utilized reference model for SMA business
+process mapping. They are found with in the Business Process Model
+chapter of this version of MITA.
+
+\section{The MITA Definition of
+Capability}\label{the-mita-definition-of-capability}
+
+Within the context of MITA, a capability can be defined as the ability
+or capacity of a State Medicaid Agency to achieve a desired outcome
+under the
+\href{https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-C/part-433/subpart-C/section-433.112}{Standards
+and Conditions within 42 CFR 433.112}. A capability may currently exist
+in an operational state or be envisioned for future development. Through
+careful planning, capabilities defined in this way can be matured and
+refined over time to become more effective and efficient. They can be
+organized and detailed at various levels of abstraction, providing
+precise descriptions for operational purposes or more generalized views
+for strategic planning.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, left=2mm, breakable, opacityback=0, colback=white, rightrule=.15mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, toprule=.15mm]
+
+\vspace{-3mm}\textbf{Key Definition}\vspace{3mm}
+
+\ldots a capability is defined as the ability or capacity of a SMA to
+achieve a desired outcome\ldots{}
+
+\end{tcolorbox}
+
+To fully define a business capability, it is essential to understand how
+it is realized through the integration of people, processes,
+information, and technology resources of an SMA. While these elements of
+the capability can change regularly, the capability itself is should
+endure over longer planning horizons, supporting the long-term alignment
+of business and IT and the achievement of increasingly beneficial
+business outcomes.
+
+\subsection{Structure of the MITA Capability
+Model}\label{structure-of-the-mita-capability-model}
+
+As depicted in the model below, the MITA Capability Model orients the
+people, process, technology, and information resources to define a MITA
+Capability. This means that to model a capability the appropriate
+components of the information architecture and the technical
+architecture must be brought together with the business architecture to
+fully formulate any MITA Capability.
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/topLevelCapabilityMetamodelGraphic1.png}}
+
+\subsubsection{Business Roles}\label{business-roles}
+
+Business roles represent individual actors, stakeholders, or partners
+involved in delivering a business capability. A single organizational
+group or team may be wholly responsible for delivering the capability,
+or multiple business entities may share the delivery of a particular
+business capability. Business Roles perform Business Processes using
+Technology Resources. They require skills and knowledge resources to
+achieve outcomes, and should be actively engaged as partners in the
+development or enhancement of any capability they help deliver.
+
+\subsubsection{Business Processes}\label{business-processes}
+
+Individual business capabilities may be enabled or delivered through a
+range of business processes that detail the activities (the how)
+associated with delivering the capability. Identifying and analyzing the
+efficiency of the underlying processes helps to optimize the business
+capability's effectiveness. Identifying the processes within a business
+capability provides a focus for maturing the capability in concert with
+the other capability components. Business Processes operationalize
+Business Capabilities.
+
+\subsubsection{Information/Data}\label{informationdata}
+
+Information/data represents the business data, knowledge, and insight
+consumed or produced by the business capability (as distinct from
+IT-related data entities). This may also include information that the
+capability exchanges with other capabilities to support the execution of
+value streams. Examples include information about customers and
+prospects, products and services, business policies and rules, sales
+reports, and performance metrics. Information/data inform the Business
+Capability, answering questions and supporting business rules.
+
+\subsubsection{Technology Resources}\label{technology-resources}
+
+Business capabilities rely on a range of tools, applications, systems,
+and services for successful execution. Technology Resources use
+Information/data to facilitate Business Processes. Such resources may
+include:
+
+\begin{itemize}
+\tightlist
+\item
+  Modular software applications
+\item
+  Cloud or on-premise infrastructure
+\item
+  Microservices
+\item
+  Analytics
+\item
+  Customer portal
+\end{itemize}
+
+In this way we can clearly interrelate all of the MITA architecture
+models and their individual components which allows us to reveal gaps
+not only in the individual components of the architecture, but also
+understand their impact on the integration of the architecture
+components at the capability level.
+
+\subsection{Relationship of MITA Capabilities to
+Outcomes}\label{relationship-of-mita-capabilities-to-outcomes}
+
+In the context of the Medicaid Information Technology Architecture
+(MITA), outcomes are intrinsically linked to capabilities, as they
+represent the tangible results achieved through the effective
+integration and execution of various elements that constitute a
+capability. In this sense, outcomes and capabilities define each other.
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/topLevelCapabilityMetamodelOutcomes.png}}
+
+\subsubsection{Outcomes}\label{outcomes}
+
+MITA defines outcomes broadly to encompass CMS-required outcomes,
+state-specific outcomes, and other outcomes not mandated in outcome
+statements as part of the Advance Planning Document (APD) process. The
+sole criterion for an outcome to meet this definition is that it must be
+a goal of a State Medicaid Agency (SMA) and be achieved through a
+Medicaid Enterprise System (MES) capability.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, left=2mm, breakable, opacityback=0, colback=white, rightrule=.15mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, toprule=.15mm]
+
+\vspace{-3mm}\textbf{Key Definition}\vspace{3mm}
+
+A MITA outcome is a goal of a State Medicaid Agency (SMA) that is
+achieved by a Medicaid Enterprise System (MES) capability.
+
+\end{tcolorbox}
+
+\subsubsection{Key Performance
+Indicator}\label{key-performance-indicator}
+
+Key Performance Indicator (KPI) is a quantifiable metric used to assess
+the effectiveness and efficiency of capabilities within a Medicaid
+Enterprise System (MES). KPIs provide measurable values that help State
+Medicaid Agencies (SMAs) track progress toward achieving specific
+outcomes, such as CMS-required or state-specific goals. These indicators
+might include metrics like processing times, error rates, or compliance
+levels.
+
+A KPI defines a measurement threshold by establishing a specific value
+or level that must be met or exceeded to demonstrate successful
+performance. For instance, a KPI might set a threshold for the maximum
+allowable processing time for claims, ensuring that they are handled
+within a specified timeframe to maintain compliance and eligibility for
+enhanced federal funding. By monitoring these thresholds, organizations
+can ensure they are meeting regulatory requirements and delivering
+high-quality services to beneficiaries, while also identifying areas for
+improvement.
+
+\subsubsection{Measure Threshold}\label{measure-threshold}
+
+A specific value or level of a Key Performance Indicator (KPI) that must
+be met or exceeded to demonstrate the effective achievement of a
+capability's intended outcome. This threshold serves as a benchmark for
+assessing whether the processes, roles, and resources integrated within
+a Medicaid Enterprise System (MES) are functioning optimally to meet the
+goals of a State Medicaid Agency (SMA). For example, a measurement
+threshold might be set for processing times, where claims must be
+processed within a certain number of days to ensure compliance with
+CMS-required outcomes and maintain eligibility for enhanced federal
+funding. By establishing and monitoring these thresholds, organizations
+can ensure they are meeting regulatory requirements and delivering
+high-quality services to beneficiaries.
+
+\subsubsection{Measurement}\label{measurement}
+
+These outcomes and metrics are also used to ensure that healthcare
+systems or modules comply with applicable federal regulations, forming
+the baseline for system or module functionality. Achieving these
+outcomes is essential for continuing to receive enhanced federal funding
+for operations. Regular measurement and analysis of KPIs help
+organizations demonstrate compliance and effectiveness, ensuring that
+they meet regulatory requirements and continue to deliver high-quality
+services to beneficiaries.
+
+In this way we can clearly interrelate all of the MITA architecture
+models and their individual components with the KPIs, thresholds, and
+measurements that indicate whether our capability achieves our desired
+outcome.
+
+While models that help conceptualize the capabilities that achieve
+CMS-required outcomes are the ones modeled for this version of MITA,
+SMAs are encouraged to use these models as a reference to model
+capabilities.
+
+\section{Capability Mapping}\label{capability-mapping}
+
+Capability mapping is a strategic tool that enables organizations, such
+as State Medicaid Agencies (SMAs), to systematically identify, organize,
+and visualize the key capabilities necessary to achieve their
+objectives. Within the MITA framework, capability mapping provides SMAs
+with a method of developing comprehensive views of the functions and
+processes required to deliver Medicaid services effectively. To begin
+the capability mapping process, SMAs should first identify the core
+capabilities that align with their strategic objectives, focusing on
+what the organization needs to achieve rather than how those goals are
+accomplished. This involves listing all necessary capabilities and
+understanding the desired outcomes they support. Next, these
+capabilities should be organized into domains and areas that reflect
+their strategic importance and interrelationships. Visualizing these
+capabilities through diagrams or maps helps stakeholders understand the
+roles, processes, technology resources, and information/data involved in
+executing each capability. This structured approach not only highlights
+areas for improvement or investment but also ensures that organizational
+efforts are strategically aligned with desired outcomes.
+
+The benefits of capability mapping are multifaceted, offering SMAs a
+clear pathway to strategic alignment and gap analysis. By visualizing
+capabilities, organizations can identify operational gaps and determine
+what new or enhanced capabilities are needed to close those gaps. This
+visualization also improves communication among stakeholders by
+providing a clear and concise representation of the organization's
+functions. To refine capabilities, SMAs should analyze current
+operations, assess the efficiency of underlying processes, and optimize
+them to enhance capability effectiveness. Additionally, capability
+mapping serves as a foundation for heat mapping, which assesses the MITA
+Framework will utilize to visualize the maturity of each capability
+evaluated in the State Self-Assessment. SMAs can overlay heat maps over
+their capability maps to visualize many things other than maturity
+levels, using color coding to indicate areas of strength and weakness.
+Regular updates to these maps allow SMAs to monitor progress and ensure
+resources are allocated effectively to achieve strategic goals. The MITA
+framework includes examples of capability maps based on CMS-required
+outcomes, serving as a reference model for SMAs to develop their own
+capability maps tailored to state-specific goals and priorities. By
+leveraging the reference models provided by MITA, SMAs can ensure their
+capability mapping efforts are aligned with both federal requirements
+and state-specific priorities.
+
+\subsection{Organizing Capabilities}\label{organizing-capabilities}
+
+To enhance the resolution and detail of a capability and provide a
+unified view of all its components, a block diagram can be employed to
+provide a unified, common view of MES. This diagram effectively links
+the capability to business processes, roles, technical resources, and
+information resources through functional decomposition. By breaking down
+the capability into its constituent parts, the block diagram offers a
+visual representation that highlights the interrelationships and
+dependencies among these elements. This approach provides a clearer
+understanding of how each component contributes to the overall
+capability, facilitating more effective analysis, optimization, and
+alignment with organizational objectives.
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/capabilityOgranizationModel.drawio.png}}
+
+We use this same method to present an this top level view of the
+capabilities required to achieve CMS-required outcomes. From this view
+increasingly detailed models can be constructed.
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/mesModuleBasedCapabilities.drawio.png}}
+
+\subsection{MITA Capability Models}\label{mita-capability-models}
+
+The MITA framework represents capabilities visually through a layered
+model that represent a capability of being composed of sub-capabilities
+and the processes, roles, information and technology resources (PRIT)
+that support the business in sustaining the capability. Each layer up
+depicts increasingly strategic capabilities and each layer down depicts
+the constituent elements that compose a capability in increasing
+operational detail. It is not the intention of this version of MITA to
+provide a full operational or tactical view of a capability, though SMAs
+may consider using this approach to improve their organizational
+awareness of their operations by developing further layers of their
+capabilities through functional decomposition.
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/capabilityLevels.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Capability Domains:} The first layer of this model aims to
+  group capabilities to organize the strategic view of an SMA's
+  capabilities. In this view one or many capabilities can be grouped
+  within a domain to indicate the pursuit of common outcomes. Each
+  domain is denoted with a single number to help annotate each
+  capability.
+\item
+  \textbf{Capability Areas:} The second layer of this model aims to
+  provide a view of the groups of capabilities that compose a domain.
+  They are organized to show capabilities that serve a specific group of
+  similar outcomes and essential
+\item
+  \textbf{Capabilities:} The third layer of this model provides a more
+  detailed view view of
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/capabilityLevels2.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Capability Mapping}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Introduction to capability mapping and its significance
+  \item
+    How capabilities are organized and detailed at various levels of
+    abstraction
+  \end{itemize}
+\end{itemize}
+
+\subsection{Relationship of MITA Capabilities to
+Maturity}\label{relationship-of-mita-capabilities-to-maturity}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, breakable, opacityback=0, toptitle=1mm, colback=white, colframe=quarto-callout-warning-color-frame, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, bottomtitle=1mm, titlerule=0mm, toprule=.15mm]
+
+Under development.
+
+\end{tcolorbox}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Strategic Planning and Improvement}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    How the capability model aids in aligning capabilities with Medicaid
+    Enterprise goals
+  \item
+    Examples of improvements in efficiency and effectiveness
+  \end{itemize}
+\item
+  \textbf{Levels of Maturity}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Description of the five levels of maturity in the MITA framework
+  \item
+    How capabilities evolve and mature over time
+  \end{itemize}
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{media/capabilityModel/maturityModel.png}}
+
+\section{Guidance on reuse of the MITA Capability
+Model}\label{guidance-on-reuse-of-the-mita-capability-model}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Practical Application}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    How to integrate the capability model into daily operations and
+    strategic planning
+  \item
+    Tips for maximizing the benefits of the model
+  \end{itemize}
+\item
+  \textbf{Continuous Improvement}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Encouragement for ongoing assessment and refinement of capabilities
+  \item
+    Leveraging feedback and performance data for model enhancement
+  \end{itemize}
+\item
+  \textbf{Implementation Guidance}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Steps for adopting the capability model
+  \item
+    Resources and support available for SMAs
+  \end{itemize}
+\item
+  \textbf{Performance Monitoring and Reporting}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Role of the capability model in tracking and enhancing performance
+  \item
+    Use of metrics and standards to measure capability effectiveness
+  \end{itemize}
+\end{itemize}
+
+\chapter{Maturity Model}\label{maturity-model}
+
+\part{State Self-Assessment}
+
+\part{Business Architecture}
+
+\chapter{Business Architecture
+Introduction}\label{business-architecture-introduction}
+
+\phantomsection\label{page-0-1}{}\phantomsection\label{page-0-0}{}\textbf{Part
+I -- BUSINESS ARCHITECTURE Chapter 1 -- INTRODUCTION}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_0_Picture_1.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_0_Picture_2.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_0_Picture_3.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_0_Picture_4.jpeg}}
+
+\subsubsection{\texorpdfstring{\textbf{Table of
+Contents}}{Table of Contents}}\label{table-of-contents}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+PART I--BUSINESS ARCHITECTURE & 1 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Chapter 1 --Introduction & 1 \\
+Introduction & 3 \\
+Purpose & 3 \\
+Scope & 4 \\
+Background & 4 \\
+Funding Requirements & 5 \\
+BA Seven Standards and Conditions & 6 \\
+Business Architecture Components & 7 \\
+The Concept of Operations11 & \\
+MITA Maturity Model11 & \\
+Business Process Model12 & \\
+12Business Capability Matrix & \\
+14Business Architecture Component Relationships & \\
+Connection Between Architectures15 & \\
+17Using the Business Architecture & \\
+Next Steps in Developing the Business Architecture18 & \\
+& \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{List of
+Figures}}{List of Figures}}\label{list-of-figures}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9630}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0370}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Figure 1-1. MITA Framework Relationship Diagram
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Figure 1-2. BA in the Context of the MITA Framework & 8 \\
+Figure 1-3. Relationship Among the Components of the Business
+Architecture14 & \\
+IA, and TA15Figure 1-4. Relationships Among Components of the BA, & \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{List of
+Tables}}{List of Tables}}\label{list-of-tables}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9577}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0423}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Table 1-1. Correlation of Seven Standards and Conditions with MITA
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Table 1-2. The Four Components of the Business Architecture. & 9 \\
+13Table 1-3. Business Process Example: Authorize Service & \\
+16Table 1-4. Component Relationships ofthe BA, IA, and TA & \\
+17Table 1-5. Stakeholder Use of the Business Architecture & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_1_Picture_8.jpeg}}
+
+\chapter[\textbf{Introduction}]{\texorpdfstring{\protect\hypertarget{page-2-0}{}{}\textbf{Introduction}}{Introduction}}\label{introduction}
+
+The Medicaid IT Architecture (MITA) Framework contains three (3)
+interrelated architectures: Business Architecture (BA), Information
+Architecture (IA), and Technical Architecture (TA) shown in
+\textbf{\hyperref[page-2-2]{Figure 1-1}}. The business capabilities from
+BA define the data strategy of IA and design the business and technical
+services of TA. MITA uses all three (3) architectures to develop a
+business-driven enterprise to provide consistency across the State
+Medicaid Enterprise.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_4.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_5.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_6.jpeg}}
+
+\phantomsection\label{page-2-2}{}The topics covered in this chapter
+include:
+
+\begin{itemize}
+\tightlist
+\item
+  BA Seven Standards and Conditions
+\item
+  Business Architecture Components
+\item
+  Business Architecture Component Relationships
+\item
+  Connection Between Architectures
+\item
+  Using the Business Architecture
+\item
+  Next Steps in Developing the Business Architecture
+\end{itemize}
+
+\section[\textbf{Purpose}]{\texorpdfstring{\protect\hypertarget{page-2-1}{}{}\textbf{Purpose}}{Purpose}}\label{purpose-1}
+
+In keeping with the guiding principle that MITA represents a
+business-driven enterprise transformation, the BA is the starting point
+of the MITA Framework. The BA describes the needs and goals of the
+individual State Medicaid Enterprise, and presents a collective vision
+of the future.
+
+The BA will accomplish the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Establish a generic business framework for all States while
+  recognizing their differences.
+\item
+  Describe how each state Medicaid Program can mature over a given
+  period with the help of stakeholders, leadership, enabling
+  legislation, and technology.
+\item
+  Provide a baseline for the State Medicaid Agency (SMA) to assess their
+  current business capabilities and measure progress toward improved
+  capabilities.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Picture_20.jpeg}}
+
+\subsection[\textbf{Scope}]{\texorpdfstring{\protect\hypertarget{page-3-0}{}{}\textbf{Scope}}{Scope}}\label{scope}
+
+The BA focuses on the State Medicaid Enterprise that centers on the
+Medicaid environment including leveraged systems and interconnections
+among Medicaid stakeholders, providers, beneficiaries, insurance
+affordability programs (e.g., CHIP, tax credits, Basic Health Program),
+Health Insurance Exchange (HIX), Health Information Exchange (HIE),
+other state and local agencies, other payers, Centers for Medicare \&
+Medicaid Services (CMS), and other federal agencies. The MITA context
+defines the Medicaid Enterprise as:
+
+\begin{itemize}
+\tightlist
+\item
+  The domain where federal matching funds apply.
+\item
+  The interfaces and bridges among Medicaid stakeholders, including
+  providers, beneficiaries, other state and local agencies, other
+  payers, CMS, and other federal agencies.
+\item
+  The sphere of influence touched by MITA (e.g., national and federal
+  initiatives such as the Nationwide Health Information Network
+  {[}NwHIN{]}). (See Front Matter, Chapter 6, Overview of the MITA
+  Initiative, for a discussion of the Medicaid Enterprise.)
+\end{itemize}
+
+\emph{Enterprise can have other meanings. For instance, Enterprise
+Architecture (EA) defines an enterprise-wide integrated set of
+components that incorporates strategic business thinking, information
+assets, and the technical infrastructure of an enterprise to promote
+information sharing across agency and organizational boundaries.}
+
+The BA acknowledges technology as one of several enablers that are
+important to growth and transformation, but it does not introduce
+technical implementations or solutions into the BA components. All
+technical references are found in Part III, Technical Architecture.
+
+\subsection[\textbf{Background}]{\texorpdfstring{\protect\hypertarget{page-3-1}{}{}\textbf{Background}}{Background}}\label{background}
+
+States, territories, and the District of Columbia (hereinafter referred
+to as States) are responsible for their individual State Medicaid
+Enterprise, and all entities are different in important ways.
+Differences include:
+
+\begin{itemize}
+\tightlist
+\item
+  Organizational structure, covered programs, and lines of business
+\item
+  Business rules, policies, and procedures affecting stakeholders
+\item
+  Relationships with other state and local agencies
+\item
+  Revenue sources
+\item
+  Location of business units
+\item
+  Workflow
+\item
+  Range of outsourcing
+\item
+  Technical solutions
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_3_Picture_19.jpeg}}
+
+These entities also differ in their concept of an enterprise, the roles
+and responsibilities of one or more Chief Information Officers (CIO),
+adoption of data and technical standards, and the use of legacy versus
+state-of-the-art applications.
+
+Given these differences, it is not possible or desirable, in the context
+of the MITA Framework, to develop a standalone business and technical
+model for each individual Medicaid Enterprise. Instead, MITA establishes
+a national framework of common processes and enabling technologies to
+support improved program administration in all States.
+
+The BA focuses on areas of common ground (e.g., that all States will
+enroll providers and pay for services rendered to eligible beneficiaries
+and that all States seek to improve health care outcomes and improve
+administrative processes).
+
+There is no ready-made methodology for building the MITA Framework to
+accommodate the business needs and transformation strategies of the
+States. To meet the special needs of MITA, the components included in
+the BA draw upon methodologies commonly in use today across industries
+as diverse as financial, transportation, and defense. The MITA team
+designed templates and models to help States identify and prioritize
+their specific business needs.
+
+The BA section of the MITA Framework shows how MITA incorporates
+business-driven design to accomplish the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Support state needs.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{o} Align with state strategic goals.
+  \item
+    \textbf{o} Align with state or Medicaid Agency enterprise
+    architecture.
+  \end{itemize}
+\item
+  Support the CMS and common state goals.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{o} Align state approaches with MITA.
+  \item
+    \textbf{o} Accommodate multi-state collaborative initiatives.
+  \end{itemize}
+\item
+  Support national goals through alignment with national initiatives,
+  such as the Office of the National Coordinator for Health Information
+  Technology (ONC) and federal guidelines (e.g., Federal Health
+  Architecture (FHA), the Federal Enterprise Architecture Framework
+  (FEAF), and national/international data standards).
+\end{itemize}
+
+\section[\textbf{Funding
+Requirements}]{\texorpdfstring{\protect\hypertarget{page-4-0}{}{}\textbf{Funding
+Requirements}}{Funding Requirements}}\label{funding-requirements}
+
+The Health and Human Services (HHS) CMS 42 CFR Part 433 Medicaid
+Program; Federal Funding for Medicaid Eligibility Determination and
+Enrollment Activities modifies Medicaid regulations for Mechanized
+Claims Processing and Information Retrieval Systems effective April 19,
+2011. The Medicaid Management Information System (MMIS) is a mechanized
+claims processing and information retrieval system used by the States
+for Title XIX of the Social Security Act (The Act); therefore, the
+guidance set forth in CMS 42 CFR Part 433 applies to the MMIS as well as
+the Medicaid eligibility determination and enrollment activities as set
+forth in the Affordable Care Act of 2010.
+
+CMS expects States to meet the standards and conditions specified in
+§433.112(b)(10) through §433.112(b)(16). The standards and conditions
+are descriptive in nature; however, CMS recognizes that in order for the
+States to meet these standards and conditions it is necessary to provide
+additional guidance that clearly articulates its criteria for meeting
+them
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_4_Picture_17.jpeg}}
+
+in terms of timeliness, accuracy, efficiency, integrity, and performance
+standards for mechanized claims processing. In response to this need,
+additional guidance materials include:
+
+\begin{itemize}
+\tightlist
+\item
+  Enhanced Funding Requirements: Seven Conditions and Standards (a.k.a.
+  Seven Standards and Conditions)
+\item
+  Guidance for Exchange and Medicaid Information Technology (IT) Systems
+  (a.k.a. IT Guidance)
+\end{itemize}
+
+CMS will continue to refine, update and expand this guidance in the
+future, based on feedback from stakeholders and with experience over
+time.
+
+\chapter[\textbf{BA Seven Standards and
+Conditions}]{\texorpdfstring{\protect\hypertarget{page-5-0}{}{}\textbf{BA
+Seven Standards and
+Conditions}}{BA Seven Standards and Conditions}}\label{ba-seven-standards-and-conditions}
+
+The MITA team evaluated and incorporated the 42 CFR Part 433 Medicaid
+Program; Federal Funding for Medicaid Eligibility Determination and
+Enrollment Activities in the BA for purposes of guiding the MITA
+stakeholders to apply the guidance to the Medicaid Enterprise.
+
+Each of the architectures aligns with the Seven Standards and
+Conditions. By utilizing best practices, industry standards, and
+technology advancements, the processes, and planning guidelines that
+build the MITA framework provide a cohesive method for meeting Medicaid
+objectives.
+
+\textbf{\hyperref[page-5-1]{Table 1-1}} depicts the impact of the Seven
+Standards and Conditions on the MITA BA, IA, and TA.
+
+\phantomsection\label{page-5-1}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4581}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1677}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1871}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1742}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0129}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Correlation of Seven Standards and Conditions with MITA Architectures
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Standards and Conditions & BusinessArchitecture &
+InformationArchitecture & TechnicalArchitecture & \\
+Modularity Standard & X & X & X & \\
+MITA Condition & X & X & X & \\
+Industry Standards Condition & X & X & X & \\
+Leverage Condition & X & X & X & \\
+Business Results Condition & X & X & X & \\
+Reporting Condition & X & X & X & \\
+Interoperability Condition & X & X & X & \\
+\end{longtable}
+
+\subsection{\texorpdfstring{\textbf{Table 1-1. Correlation of Seven
+Standards and Conditions with
+MITA}}{Table 1-1. Correlation of Seven Standards and Conditions with MITA}}\label{table-1-1.-correlation-of-seven-standards-and-conditions-with-mita}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_5_Picture_12.jpeg}}
+
+The BA includes:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Modularity Standard} Uses a modular, flexible approach to
+  systems development, including the use of open interfaces and exposed
+  Application Programming Interfaces (API); the separation of business
+  rules from core programming; and the availability of business rules in
+  both human and machine-readable formats. The States commit to formal
+  system development methodology and open, reusable system architecture.
+\item
+  \textbf{MITA Condition} States align to and advance increasingly in
+  MITA maturity for business, architecture, and data.
+\end{itemize}
+
+\textbf{Industry Standards Condition} - Ensures alignment with, and
+incorporation of, industry standards: the Health Insurance Portability
+and Accountability Act of 1996 (HIPAA) security, privacy and transaction
+standards; accessibility standards established under section 508 of the
+Rehabilitation Act, or standards that provide greater accessibility for
+individuals with disabilities, and compliance with Federal Civil Rights
+laws; standards adopted by the Secretary under section 1104 of the
+Affordable Care Act; and standards and protocols adopted by the
+Secretary under section 1561 of the Affordable Care Act.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Leverage Condition} States solutions should promote sharing,
+  leverage, and reuse of Medicaid technologies and systems within and
+  among States.
+\item
+  \textbf{Business Results Condition} Systems should support accurate
+  and timely processing of claims (including claims of eligibility),
+  adjudications, and effective communications with providers,
+  beneficiaries, and the public.
+\item
+  \textbf{Reporting Condition} Solutions should produce transaction
+  data, reports, and performance information that contribute to program
+  evaluation, continuous improvement in business operations, and
+  transparency and accountability.
+\item
+  \textbf{Interoperability Condition} Systems must ensure seamless
+  coordination and integration with the Exchange (whether run by the
+  state or federal government), and allow interoperability with health
+  information exchanges, public health agencies, human services
+  programs, and community organizations providing outreach and
+  enrollment assistance services.
+\end{itemize}
+
+\chapter[\textbf{Business Architecture
+Components}]{\texorpdfstring{\protect\hypertarget{page-6-0}{}{}\textbf{Business
+Architecture
+Components}}{Business Architecture Components}}\label{business-architecture-components}
+
+The BA is a conceptual construct that encompasses models, matrices, and
+templates. These components derive from a variety of industry standards
+because no single methodology exists that meets the scope of MITA. The
+MITA Framework breaks new ground and is a model for other federal,
+state, and local entities.
+
+The MITA BA contains the following components:
+
+\begin{itemize}
+\tightlist
+\item
+  Concept of Operations
+\item
+  MITA Maturity Model
+\item
+  Business Process Model
+\item
+  Business Capability Matrix
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_6_Picture_17.jpeg}}
+
+These are living models that evolve with the MITA Framework life cycle.
+The MITA team tailored the level of detail in each model to meet the
+specific needs of the intended audience.
+\textbf{\hyperref[page-7-0]{Figure 1-2}} provides an overview of the
+components of the BA. See Part I, Chapters 2 through 5 for a more
+detailed description for each of these components.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_7_Figure_3.jpeg}}
+
+\textbf{Figure 1-2}. \textbf{BA in the Context of the MITA Framework}
+
+\phantomsection\label{page-7-0}{}The MITA Framework focuses on the
+common ground shared by various distinct State Medicaid Enterprises and
+yet accommodates their differences. The BA consists of four (4)
+components that are summarized in \textbf{\hyperref[page-8-0]{Table}
+1-2}. The BA is a composite of interrelated models and templates.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_7_Picture_6.jpeg}}
+
+\subsection{\texorpdfstring{\textbf{Table 1-2. The Four Components of
+the Business
+Architecture.}}{Table 1-2. The Four Components of the Business Architecture.}}\label{table-1-2.-the-four-components-of-the-business-architecture.}
+
+\phantomsection\label{page-8-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0465}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2903}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3977}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2614}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0021}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0021}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Business Architecture Components
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Component & TypeofModel & Function & Relationship & & \\
+ConceptofOperations(COO)COO &
+TheCOOdescribescurrentoperations,avisionoftransformation,transformationstostakeholderrolesandinformationexchanges,andtheinfluenceofenablers(e.g.,newpolicy,legislation,technology).
+&
+EstablishesavisionfortransformationoftheStateMedicaidEnterprise.Linksenablerstotheimprovementsinbusinessprocesses.Showshowstakeholders'roleschange.Showshowprocessesanddatachange.FocusesonimprovementsintheSMAoperations.
+&
+EstablishesthetargetsandvisionthatotherBAcomponentswilladdress.ProvidesaplatformandgroundingfortheMMM
+andtheBusinessCapabilityMatrix(BCM). & & \\
+MITAMaturityModel(MMM) &
+Subdividedintofive(5)levelsofprogressivematurity,theMMMillustrateshowto
+transformgoals,objectives,andbusinesscapabilitiesprogress. &
+ShowshowtomeetStateMedicaidEnterprisegoalsandobjectivesandhowtoimprove
+businessareas.Providesbase,consistency,andmeasuresforspecifyingdetailedbusinesscapabilitiesastheymature.
+& MMM providesstructure to theCOO vision tobuild the
+BCM.Providesaframeworkandmodelforthebusinesscapabilities.MMM aligns
+withthe SevenStandards andConditionsrequirements. & & \\
+BusinessProcessModel(BPM) & The BPM is acollection ofcommon
+businessprocesses for theoperation ofMedicaidPrograms. &
+Providesamodelofmajorbusinessareasandsubareas.Providesdetailed &
+OriginatesfromtheSystemsTechnicalAdvisoryGroup(S-TAG)redesignoftheMedicaid
+& & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_8_Picture_4.jpeg}}
+
+Part I, Chapter 1 - Page 9 February 2012 Version 3.0
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0410}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3053}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2462}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4055}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0019}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Business Architecture Components
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Component & TypeofModel & Function & Relationship & \\
+&
+Atemplatecapturesthedescriptionofeachbusinessprocess.Thebusinessprocessescovercurrentandnear-termoperations.
+&
+definitionsofcommonbusinessprocesses.Describesbusinessprocessesusingacommonvocabulary.Renderssomebusinessprocessesobsoleteathigherlevelsofmaturity.
+&
+ManagementInformationSystem(MMIS)model,variousstatemodels,andtheMedicaidHIPAA-CompliantConceptModel(MHCCM)andfederalregulation.BusinessprocessesunderreviewbytheNationalMedicaidEDIHealthcare(NMEH)workgroups.ReviewandrefinementprocessundercontinualreviewbyStates.
+& \\
+BusinessCapabilityMatrix(BCM) &
+Subdividedintofive(5)levelsofmaturity,theBCMappliestheMMMtotheBPMtoderivecapabilitiesforeachbusinessprocessateachmaturitylevel.TheBCMdescribeshowto
+transformand improve abusinessprocess. &
+Showshoweachbusinessprocesscanimprove.ProvidesconsistencyandamodelfortheSMAtouseinmeasuringtheirownlevelsofmaturityforeachbusinessprocess.
+& The BCM definessix (6) businesscapabilitiesacross five (5)levels of
+maturityfor each
+businessprocess.AlignswiththeMMMforthedescriptionofthecharacteristicsofthematuritylevels.FormstheevaluationcriteriafortheStateSelfAssessment(SSA).
+& \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_9_Picture_3.jpeg}}
+
+\section[\textbf{The Concept of
+Operations}]{\texorpdfstring{\protect\hypertarget{page-10-0}{}{}\textbf{The
+Concept of
+Operations}}{The Concept of Operations}}\label{the-concept-of-operations}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_3.jpeg}}
+
+The COO is a tool used to describe current business operations and to
+develop a future transformation that meets the needs of stakeholders and
+responds to enablers (e.g., new policy, legislation, and technology).
+Other industries (e.g., the Department of Defense (DOD) or National
+Aeronautics and Space Administration (NASA)) use the COO as a
+strategic-planning device to capture the As-Is (i.e., current)
+operations,
+
+create the To-Be (i.e., future) environment, and level-set expectations
+before engaging in major transformation projects. The COO provides a
+structure to place information gathered from interviews with States and
+visioning sessions conducted at MMIS conferences. The COO structure
+provides key information including:
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of the scope of the Medicaid Enterprise.
+\item
+  Description of the As-Is (current) operations in terms of business,
+  architecture, and data.
+\item
+  Description of the drivers and enablers that propel and support
+  transformation.
+\item
+  Description of the To-Be environment in terms of business,
+  architecture, and data.
+\item
+  Description of operational scenarios with sequence of events and
+  activities carried out by stakeholders and the State Medicaid
+  Enterprise.
+\item
+  Description of the impacts on each stakeholder.
+\item
+  Description of a summary of the improvements to the State Medicaid
+  Enterprise and stakeholders.
+\end{itemize}
+
+The goal of the COO is to project changes, transformations, and provide
+visions of To-Be operations, new roles and data exchanges for
+stakeholders. The MITA COO provides a common vision shared by CMS and
+the States that preserves individual adaptations at the state level.
+
+Part I, Chapter 2, Concept of Operations, provides more information on
+the Medicaid Enterprise COO. Part I, Appendix A, Concept of Operations
+Details, contains additional information.
+
+\section[\textbf{MITA Maturity
+Model}]{\texorpdfstring{\protect\hypertarget{page-10-1}{}{}\textbf{MITA
+Maturity Model}}{MITA Maturity Model}}\label{mita-maturity-model}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_16.jpeg}}
+
+The MMM originates from industries that use such models to illustrate
+how a business can mature. The MMM adapts the industry model to the
+Medicaid Enterprise by describing Medicaid Program goals and objectives
+and the maturation of the MITA technical principles. The
+
+transformation through each of the five (5) levels represents
+significant business capabilities advances over the previous period.
+
+The MMM describes the five (5) levels of maturity and the measurable
+qualities that each level demonstrates. The general description is at a
+high enough level to apply to most aspects of State Medicaid Enterprise
+operations. For example, the MMM defines, at Level 1, the business area
+or process is in compliance with current regulations. At Level 2, the
+process matures because of pressures for cost containment and
+availability of newer tools. At Level 3, noticeable improvement occurs
+in the standardization and sharing of information
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_20.jpeg}}
+
+and processes among multiple entities, including the beneficiary. At
+Level 4, instant availability of clinical information increases the
+transformation. By Level 5, States and local agencies have become
+interoperable across the United States.
+
+The MMM is the point of reference for the BCM. The BCM aligns with the
+MMM to maintain consistency of definition. Part I, Chapter 3, Maturity
+Model, presents details of the MMM, and Part I, Appendix B, Maturity
+Model Details, contains the complete detailed text.
+
+\subsection[\textbf{Business Process
+Model}]{\texorpdfstring{\protect\hypertarget{page-11-0}{}{}\textbf{Business
+Process Model}}{Business Process Model}}\label{business-process-model}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Figure_5.jpeg}}
+
+The BPM is a collection of common business processes for the operation
+of Medicaid Programs. A template describes those processes, including
+current and near-term operations as defined in Level 3 of the BCM. The
+MITA Framework BPM
+
+derives from multiple sources that create a common model that reflects
+most State Medicaid Enterprises -- notable sources include the S-TAG
+\emph{Redesign of the Medicaid Management Information System (MMIS),}
+and the CMS MHCCM, that consolidates business processes from a dozen
+States.
+
+States should develop business workflows for the different business
+functions of the state to advance the alignment of the state's
+capability maturity with the MMM. These business workflows should align
+to any provided by CMS in support of Medicaid and Exchange business
+operations and requirements. States should work to streamline and
+standardize these operational approaches and business workflows to
+minimize customization demands on technology solutions and optimize
+business outcomes.
+
+There are those business processes that all States perform (e.g., Enroll
+Provider) and those that are voluntary and depend on implementation of
+special programs within a state (e.g., pay Managed Care Organization
+capitation or enrollment of member in a special program). The BPM
+defines common business practices across all State Medicaid Enterprises.
+The MITA Framework BPM offers a hierarchy of Tier 1 business areas, Tier
+2 business categories and Tier 3 business processes. The MITA Framework
+contains ten (10) business areas divided into twenty-one (21) business
+categories with eighty (80) individual business processes. See Part I,
+Appendix C, Business Process Model Details.
+
+The BPM provides a Business Process Template (BPT) for describing each
+business process. The BPT provides a summary of the business process,
+trigger event and result, activity steps, data requirements, predecessor
+and successor processes, failure points, and other elements. The NMEH
+workgroups review business processes, and they stand to benefit from
+ongoing review by state workgroups. See Part I, Chapter 4, Business
+Process Model, for a detailed presentation of the BPM and Part I,
+Appendix C, Business Process Model Details, for the complete set of
+business area definitions and business process descriptions.
+
+\section[\textbf{Business Capability
+Matrix}]{\texorpdfstring{\protect\hypertarget{page-11-1}{}{}\textbf{Business
+Capability
+Matrix}}{Business Capability Matrix}}\label{business-capability-matrix}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Picture_12.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Picture_13.jpeg}}
+
+Applying the MMM to each business process yields the BCM that shows how
+the business process matures. The BCM defines six (6) business
+capabilities with five (5) levels of maturity to each business process.
+The BCM assigns capabilities to an individual business process rather
+than to SMA operations taken as a whole. In reality, no SMA is ``all
+Level 1'' or ``all Level 2,'' but rather having
+
+a blend of different levels of capability. An example of the
+relationship among the business process, the MMM, and the BCM is shown
+in \textbf{\hyperref[page-12-0]{Table} 1-3.}
+
+Part I, Chapter 5, Business Capability Matrix, presents more information
+on the BCM and Part I, Appendix D, Business Capability Matrix Details,
+lists the capabilities defined for business processes contained in MITA
+Framework.
+
+\subsection{\texorpdfstring{\textbf{Table 1-3. Business Process Example:
+Authorize
+Service}}{Table 1-3. Business Process Example: Authorize Service}}\label{table-1-3.-business-process-example-authorize-service}
+
+\phantomsection\label{page-12-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0603}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2496}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.6868}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0034}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Authorize Service Business Process
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+LevelNo. & MITAMaturityModelDefinition & BusinessCapability & \\
+1 &
+Complieswithregulations;mostlymanualactivities;delaysincommunicatingresults.
+&
+Receiptofandresponsetorequestsareprimarilyviapaper,fax,andphone;applypolicyguidelinesmanually;complieswithregulationsonturnaroundtimeandaccuracy.
+& \\
+2 &
+Improvementsspearheadedbycostmanagementgoals;improvementsmadeinspeedofcommunicationandresponse.
+&
+Authorizationofservicegivengreaterpriorityasacost-managementtool;improvementsmadeincommunications;receiptofandresponsestorequestsmadeviaportal;adopt
+HIPAAstandards. & \\
+3 &
+Informationandservicessharedwithotheragenciesandbeneficiary;streamlinedprocess;improvedresults.
+&
+Solutionsbecomereusableandsharablebecauseofadoptionofstandardsbystateagenciesanddata-sharingagreementstocollaborateonauthorizationofservices.
+& \\
+4 &
+Incorporatesclinicalinformationintotheprocesstofurtherimproveresults. &
+Directaccessbytheauthorizingagencytoaccess to
+clinicalinformation;automationofrequests;render
+decisionsbypayerautomaticallyasprovider
+updatesbeneficiary'selectronichealthrecord;improve
+accuracybecauseprovider basesdecisionsonclinicalevidence;limits
+manualinterventiontoexceptions. & \\
+5 &
+Demonstrateswidespreadinteroperabilitytoachievemaximumimprovementsenvisionedatthistime.
+&
+Directaccessbytheauthorizingagencytoclinicalandadministrativeinformationanywhereinthecountrytoconfirmordenytheauthorizationforaservice.
+& \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_12_Picture_6.jpeg}}
+
+\chapter[\textbf{Business Architecture Component
+Relationships}]{\texorpdfstring{\protect\hypertarget{page-13-0}{}{}\textbf{Business
+Architecture Component
+Relationships}}{Business Architecture Component Relationships}}\label{business-architecture-component-relationships}
+
+The four (4) components of the BA are interrelated:
+
+\begin{itemize}
+\tightlist
+\item
+  The COO serves as a model to frame a vision for Medicaid Program
+  health care outcomes and operational efficiencies. It establishes the
+  To-Be environment that becomes the goal of the Medicaid Enterprise
+  transformation. The COO provides the vision for the MMM. It also
+  supplies an overview for the BPM.
+\item
+  The MMM uses a common industry approach to describe the differences
+  between five (5) levels of progressive maturity, ranging from As-Is
+  operations to the To-Be environment. The MMM is the point of reference
+  used by the BCM to describe the levels of maturity for a business
+  process.
+\item
+  The BPM describes As-Is (i.e., current) Medicaid operations as defined
+  for Level 3 of the BCM.
+\item
+  The BCM uses the five (5) levels of maturity described in the MMM and
+  the To-Be environment defined in the COO to create definitions for
+  business capabilities at five (5) levels of maturity for each business
+  process.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Figure_8.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Figure_9.jpeg}}
+
+\subsection{\texorpdfstring{\textbf{Figure 1-3. Relationship Among the
+Components of the Business
+Architecture}}{Figure 1-3. Relationship Among the Components of the Business Architecture}}\label{figure-1-3.-relationship-among-the-components-of-the-business-architecture}
+
+\phantomsection\label{page-13-1}{}\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Picture_11.jpeg}}
+
+\chapter[\textbf{Connection Between
+Architectures}]{\texorpdfstring{\protect\hypertarget{page-14-0}{}{}\textbf{Connection
+Between
+Architectures}}{Connection Between Architectures}}\label{connection-between-architectures}
+
+The MITA Framework consists of three (3) interrelated BA, IA, and TA
+components that work together to define a business-driven enterprise
+transformation. The BA describes the business process activities along
+with data input, data output, and required shared data. The IA provides
+the bridge between the business need of information and the technical
+solution data. The TA describes the technology enablers associated with
+the business capabilities and their varied levels of maturity.
+
+\textbf{\hyperref[page-14-1]{Figure 1-4}} illustrates how BA, IA, and TA
+components interrelate. This is a high-level view of the primary
+components within each architecture. Front Matter, Chapter 6,
+Introduction to the MITA Framework, presents a detailed discussion on
+the inter-relationship of all three (3) architectures. The BA
+categorizes the business processes as business capabilities and assigned
+a level of MITA maturity. Based on the level of maturity, the IA defines
+the Conceptual Data Model (CDM) and Logical Data Model (LDM) with
+necessary data attributes for the design of technical capabilities. The
+TA defines the resulting business services and technical services for
+the To-Be environment of the State Medicaid Enterprise.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_14_Figure_5.jpeg}}
+
+\textbf{Figure 1-4. Relationships Among Components of the BA, IA, and
+TA}
+
+\phantomsection\label{page-14-1}{}The BA does not present specific
+technical solutions or detailed data requirements. Some of its
+components, however, point to specific companion components in the IA
+and TA sections of MITA Framework (Parts II and III, respectively).
+\textbf{\hyperref[page-15-0]{Table} 1-4} describes the name of the BA
+Component and its relationship to the other architecture component as
+well as its MITA Framework 3.0 documented location.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_14_Picture_8.jpeg}}
+
+\subsubsection{\texorpdfstring{\textbf{Table 1-4. Component
+Relationships of the BA, IA, and
+TA}}{Table 1-4. Component Relationships of the BA, IA, and TA}}\label{table-1-4.-component-relationships-of-the-ba-ia-and-ta}
+
+\phantomsection\label{page-15-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3900}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1876}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4165}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0030}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0030}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+BA, IA, and TA Component Relationships
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+BusinessArchitectureComponent & OtherArchitectureComponent &
+Relationship & & \\
+COO--DataExchanges & IA(PartII)--Allchapters &
+IAchaptersprovidedetailsregardingthetransformationofdataandinformationidentifiedintheCOO.
+& & \\
+COO--Drivers andEnablers & TA(PartIII), Chapter2,Technical
+ManagementStrategy;Chapter7,TechnicalCapabilityMatrix & Service-Oriented
+Architectures(SOA)andTechnicalCapabilitiesareenablersreferencedintheCOO.
+& & \\
+BPM--TriggerEvent,Result,andSharedDataineachbusinessprocessdescribeingeneraltermsthekindofdatareceivedby,usedby,andresultingfromeachbusinessprocess
+& IA(PartII),
+Chapter2,DataManagementStrategy;Chapter3,ConceptualDataModel &
+DataManagementStrategy(DMS)explainshowthedatasupportsthebusinessprocesses.TheCDMidentifiesgroupingsofinformationcommontoMedicaidbusinessareasandclustersofbusinessprocesses.
+& & \\
+BCM & IA(PartII), Chapter4,LogicalDataModel; Chapter 6Information
+Capability Matrix & TheLDM
+definesdataclassesandattributesneededtosupportdifferentlevelsofmaturity.AbusinessprocessdescribedataLevel3businesscapabilityrequiresLevel3dataattributes.
+& & \\
+BCM & TA(PartIII), Chapter7,TechnicalCapabilityMatrix &
+TheBCMdrivestheTechnicalCapability Matrix (TCM).TAassociates technical
+capabilitieswiththeBCMlevelwherespecifictechnologyisnecessarytosupportthebusinessprocess.
+& & \\
+BCM--Level3andabove & TA(PartIII), Chapter 2Technical
+ManagementStrategy; Chapter3,BusinessServices &
+Abusinessserviceisanimplementationofaspecificbusinessprocessataspecificlevelofcapability.TA
+associatesbusiness servicesandSOAwithBCMLevel3andabove. & & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_15_Picture_4.jpeg}}
+
+\chapter[\textbf{Using the Business
+Architecture}]{\texorpdfstring{\protect\hypertarget{page-16-0}{}{}\textbf{Using
+the Business
+Architecture}}{Using the Business Architecture}}\label{using-the-business-architecture}
+
+CMS requires States to align to and advance increasingly in MITA
+maturity for business, architecture, and data. CMS expects States to use
+the BA components to plan for improvements in the State Medicaid
+Program, both in the delivery of services to providers and
+beneficiaries, and in its internal operations and exchanges of
+information with the other external stakeholders. BA provides the COO
+and the MMM as background material. States and vendors use the BPM and
+the BCM tools. \textbf{\hyperref[page-16-1]{Table} 1-5} summarizes how
+stakeholders use the BA.
+
+\phantomsection\label{page-16-1}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0861}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.9104}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0035}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Stakeholder Useof the Business Architecture
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stakeholder & HowStakeholders Use BA & \\
+SMA & The
+SMAmapstheiroperationstotheBPMandthenassessesthelevelofmaturityusingtheBCM.Whenthe
+SMArequires
+informationtechnologyupgradestosupportprogramimprovement,theSMAusestheSS-Atoshowhowit
+will use
+theenhancedfundingtoachieveaspecificresult(e.g.,movingfromLevel1or2toLevel3).
+& \\
+CMS &
+CMSprovidesleadershipinestablishingtheMITAguidelinesandpromotingthemamongStates.ThroughthereleaseoftheMITAFramework,specialworkshopswithStates,Medicaidconferencematerial,andworkingwithearlyadopterStates,CMSprovides
+guidance and principles to achieve the Medicaidvision. & \\
+Vendors &
+ThevendorcommunityusestheMITAFrameworkasareferenceinplanningtheirresearchanddevelopmentactivities.TheyusetheBA,inparticular,todeterminethematurityleveloffunctionssupportedbytheirsystems.Theyhaveacommonunderstandingofthe
+CMS directionfor the Medicaid
+Program,andtheycanshowhowtheirproductssupportMITAcapabilities. & \\
+Providers & Providersplayanactiveroleintheexchangeofinformationwiththe
+SMA.
+TheycanlookattheSMABAtounderstandwhatdirectiontheSMAistakingandtokeepthisinmindastheyinvestininformation
+technologyupgradesandreengineertheirpractices.Insomecases,the
+SMAinvolveprovidersdirectlyinplanningaMedicaidProgramtransformation.
+& \\
+Beneficiaries & The BA supports the SMAperson-centric outreach,
+eligibility and enrollmentactivities across the health and human
+services spectrum.Beneficiariesandconsumergroupsare
+abletolookattheSMABAandidentify thebenefits.AtLevel3business capability
+maturity,beneficiariesareparticipantsinselfdirectedhealthcaredecisions.
+& \\
+Legislators,Governors &
+StatesdeveloppresentationsbasedontheBAtoshowthegovernorandlegislatorswhatgoalsCMSisestablishingforStatesthatrequestenhanced
+& \\
+\end{longtable}
+
+\subsection{\texorpdfstring{\textbf{Table 1-5. Stakeholder Use of the
+Business
+Architecture}}{Table 1-5. Stakeholder Use of the Business Architecture}}\label{table-1-5.-stakeholder-use-of-the-business-architecture}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_16_Picture_6.jpeg}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1842}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8008}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0075}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0075}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Stakeholder Useof the Business Architecture
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stakeholder & HowStakeholders Use BA & & \\
+& funding. & & \\
+OtherPayersandOtherAgencies & The MITA team invites other
+payersandotheragenciestoreviewtheMITAFramework,especiallytheBA,tolearnabouttheMedicaidEnterprisetransformation.
+& & \\
+\end{longtable}
+
+In general, MITA supports stakeholder roles and access to information,
+technology that eliminates most manual activities, and the
+transformation of the Medicaid business with the assistance of the CMS,
+the SMA, providers, and beneficiaries. In addition, MITA supports
+providers with instant access to patient records no matter what their
+location is, patients can view their Personal Health Information (PHI)
+and make informed decisions regarding treatment, and payers can view
+clinical records nationally to expedite decisions on prior authorization
+and payment.
+
+\section[\textbf{Next Steps in Developing the Business
+Architecture}]{\texorpdfstring{\protect\hypertarget{page-17-0}{}{}\textbf{Next
+Steps in Developing the Business
+Architecture}}{Next Steps in Developing the Business Architecture}}\label{next-steps-in-developing-the-business-architecture}
+
+The MITA Framework delivers the starter kit for a controlled State
+Medicaid Enterprise transformation. MITA will continue to evolve over
+time. The business process defines the input and output of information
+but not the details of the process; however the business community will
+still decide the requirements for standardized triggers and results. The
+CMS MITA team continues to support SMA efforts by serving as a conduit
+for improvements to MITA models that all States and vendors can access.
+
+The MITA Framework and the BA are ever evolving so that the SMA can
+continuously improve the way they deliver services to beneficiaries and
+providers, account for outcomes, reward participants based on
+performance, and respond dynamically to requests for information.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_17_Picture_7.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_17_Picture_9.jpeg}}
+
+\chapter{CONOPS}\label{conops}
+
+\phantomsection\label{page-0-1}{}\phantomsection\label{page-0-0}{}\textbf{Part
+I -- BUSINESS ARCHITECTURE Chapter 1 -- INTRODUCTION}
+
+\subsubsection{\texorpdfstring{\textbf{Table of
+Contents}}{Table of Contents}}\label{table-of-contents-1}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+PART I--BUSINESS ARCHITECTURE & 1 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Chapter 1 --Introduction & 1 \\
+Introduction & 3 \\
+Purpose & 3 \\
+Scope & 4 \\
+Background & 4 \\
+Funding Requirements & 5 \\
+BA Seven Standards and Conditions & 6 \\
+Business Architecture Components & 7 \\
+The Concept of Operations11 & \\
+MITA Maturity Model11 & \\
+Business Process Model12 & \\
+12Business Capability Matrix & \\
+14Business Architecture Component Relationships & \\
+Connection Between Architectures15 & \\
+17Using the Business Architecture & \\
+Next Steps in Developing the Business Architecture18 & \\
+& \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{List of
+Figures}}{List of Figures}}\label{list-of-figures-1}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9630}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0370}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Figure 1-1. MITA Framework Relationship Diagram
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Figure 1-2. BA in the Context of the MITA Framework & 8 \\
+Figure 1-3. Relationship Among the Components of the Business
+Architecture14 & \\
+IA, and TA15Figure 1-4. Relationships Among Components of the BA, & \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{List of
+Tables}}{List of Tables}}\label{list-of-tables-1}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9577}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0423}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Table 1-1. Correlation of Seven Standards and Conditions with MITA
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Table 1-2. The Four Components of the Business Architecture. & 9 \\
+13Table 1-3. Business Process Example: Authorize Service & \\
+16Table 1-4. Component Relationships ofthe BA, IA, and TA & \\
+17Table 1-5. Stakeholder Use of the Business Architecture & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_1_Picture_8.jpeg}}
+
+\chapter[\textbf{Introduction}]{\texorpdfstring{\protect\hypertarget{page-2-0}{}{}\textbf{Introduction}}{Introduction}}\label{introduction-1}
+
+The Medicaid IT Architecture (MITA) Framework contains three (3)
+interrelated architectures: Business Architecture (BA), Information
+Architecture (IA), and Technical Architecture (TA) shown in
+\textbf{\hyperref[page-2-2]{Figure 1-1}}. The business capabilities from
+BA define the data strategy of IA and design the business and technical
+services of TA. MITA uses all three (3) architectures to develop a
+business-driven enterprise to provide consistency across the State
+Medicaid Enterprise.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_4.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_5.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Figure_6.jpeg}}
+
+\phantomsection\label{page-2-2}{}The topics covered in this chapter
+include:
+
+\begin{itemize}
+\tightlist
+\item
+  BA Seven Standards and Conditions
+\item
+  Business Architecture Components
+\item
+  Business Architecture Component Relationships
+\item
+  Connection Between Architectures
+\item
+  Using the Business Architecture
+\item
+  Next Steps in Developing the Business Architecture
+\end{itemize}
+
+\section[\textbf{Purpose}]{\texorpdfstring{\protect\hypertarget{page-2-1}{}{}\textbf{Purpose}}{Purpose}}\label{purpose-2}
+
+In keeping with the guiding principle that MITA represents a
+business-driven enterprise transformation, the BA is the starting point
+of the MITA Framework. The BA describes the needs and goals of the
+individual State Medicaid Enterprise, and presents a collective vision
+of the future.
+
+The BA will accomplish the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Establish a generic business framework for all States while
+  recognizing their differences.
+\item
+  Describe how each state Medicaid Program can mature over a given
+  period with the help of stakeholders, leadership, enabling
+  legislation, and technology.
+\item
+  Provide a baseline for the State Medicaid Agency (SMA) to assess their
+  current business capabilities and measure progress toward improved
+  capabilities.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_2_Picture_20.jpeg}}
+
+\subsection[\textbf{Scope}]{\texorpdfstring{\protect\hypertarget{page-3-0}{}{}\textbf{Scope}}{Scope}}\label{scope-1}
+
+The BA focuses on the State Medicaid Enterprise that centers on the
+Medicaid environment including leveraged systems and interconnections
+among Medicaid stakeholders, providers, beneficiaries, insurance
+affordability programs (e.g., CHIP, tax credits, Basic Health Program),
+Health Insurance Exchange (HIX), Health Information Exchange (HIE),
+other state and local agencies, other payers, Centers for Medicare \&
+Medicaid Services (CMS), and other federal agencies. The MITA context
+defines the Medicaid Enterprise as:
+
+\begin{itemize}
+\tightlist
+\item
+  The domain where federal matching funds apply.
+\item
+  The interfaces and bridges among Medicaid stakeholders, including
+  providers, beneficiaries, other state and local agencies, other
+  payers, CMS, and other federal agencies.
+\item
+  The sphere of influence touched by MITA (e.g., national and federal
+  initiatives such as the Nationwide Health Information Network
+  {[}NwHIN{]}). (See Front Matter, Chapter 6, Overview of the MITA
+  Initiative, for a discussion of the Medicaid Enterprise.)
+\end{itemize}
+
+\emph{Enterprise can have other meanings. For instance, Enterprise
+Architecture (EA) defines an enterprise-wide integrated set of
+components that incorporates strategic business thinking, information
+assets, and the technical infrastructure of an enterprise to promote
+information sharing across agency and organizational boundaries.}
+
+The BA acknowledges technology as one of several enablers that are
+important to growth and transformation, but it does not introduce
+technical implementations or solutions into the BA components. All
+technical references are found in Part III, Technical Architecture.
+
+\subsection[\textbf{Background}]{\texorpdfstring{\protect\hypertarget{page-3-1}{}{}\textbf{Background}}{Background}}\label{background-1}
+
+States, territories, and the District of Columbia (hereinafter referred
+to as States) are responsible for their individual State Medicaid
+Enterprise, and all entities are different in important ways.
+Differences include:
+
+\begin{itemize}
+\tightlist
+\item
+  Organizational structure, covered programs, and lines of business
+\item
+  Business rules, policies, and procedures affecting stakeholders
+\item
+  Relationships with other state and local agencies
+\item
+  Revenue sources
+\item
+  Location of business units
+\item
+  Workflow
+\item
+  Range of outsourcing
+\item
+  Technical solutions
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_3_Picture_19.jpeg}}
+
+These entities also differ in their concept of an enterprise, the roles
+and responsibilities of one or more Chief Information Officers (CIO),
+adoption of data and technical standards, and the use of legacy versus
+state-of-the-art applications.
+
+Given these differences, it is not possible or desirable, in the context
+of the MITA Framework, to develop a standalone business and technical
+model for each individual Medicaid Enterprise. Instead, MITA establishes
+a national framework of common processes and enabling technologies to
+support improved program administration in all States.
+
+The BA focuses on areas of common ground (e.g., that all States will
+enroll providers and pay for services rendered to eligible beneficiaries
+and that all States seek to improve health care outcomes and improve
+administrative processes).
+
+There is no ready-made methodology for building the MITA Framework to
+accommodate the business needs and transformation strategies of the
+States. To meet the special needs of MITA, the components included in
+the BA draw upon methodologies commonly in use today across industries
+as diverse as financial, transportation, and defense. The MITA team
+designed templates and models to help States identify and prioritize
+their specific business needs.
+
+The BA section of the MITA Framework shows how MITA incorporates
+business-driven design to accomplish the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Support state needs.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{o} Align with state strategic goals.
+  \item
+    \textbf{o} Align with state or Medicaid Agency enterprise
+    architecture.
+  \end{itemize}
+\item
+  Support the CMS and common state goals.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{o} Align state approaches with MITA.
+  \item
+    \textbf{o} Accommodate multi-state collaborative initiatives.
+  \end{itemize}
+\item
+  Support national goals through alignment with national initiatives,
+  such as the Office of the National Coordinator for Health Information
+  Technology (ONC) and federal guidelines (e.g., Federal Health
+  Architecture (FHA), the Federal Enterprise Architecture Framework
+  (FEAF), and national/international data standards).
+\end{itemize}
+
+\section[\textbf{Funding
+Requirements}]{\texorpdfstring{\protect\hypertarget{page-4-0}{}{}\textbf{Funding
+Requirements}}{Funding Requirements}}\label{funding-requirements-1}
+
+The Health and Human Services (HHS) CMS 42 CFR Part 433 Medicaid
+Program; Federal Funding for Medicaid Eligibility Determination and
+Enrollment Activities modifies Medicaid regulations for Mechanized
+Claims Processing and Information Retrieval Systems effective April 19,
+2011. The Medicaid Management Information System (MMIS) is a mechanized
+claims processing and information retrieval system used by the States
+for Title XIX of the Social Security Act (The Act); therefore, the
+guidance set forth in CMS 42 CFR Part 433 applies to the MMIS as well as
+the Medicaid eligibility determination and enrollment activities as set
+forth in the Affordable Care Act of 2010.
+
+CMS expects States to meet the standards and conditions specified in
+§433.112(b)(10) through §433.112(b)(16). The standards and conditions
+are descriptive in nature; however, CMS recognizes that in order for the
+States to meet these standards and conditions it is necessary to provide
+additional guidance that clearly articulates its criteria for meeting
+them
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_4_Picture_17.jpeg}}
+
+in terms of timeliness, accuracy, efficiency, integrity, and performance
+standards for mechanized claims processing. In response to this need,
+additional guidance materials include:
+
+\begin{itemize}
+\tightlist
+\item
+  Enhanced Funding Requirements: Seven Conditions and Standards (a.k.a.
+  Seven Standards and Conditions)
+\item
+  Guidance for Exchange and Medicaid Information Technology (IT) Systems
+  (a.k.a. IT Guidance)
+\end{itemize}
+
+CMS will continue to refine, update and expand this guidance in the
+future, based on feedback from stakeholders and with experience over
+time.
+
+\chapter[\textbf{BA Seven Standards and
+Conditions}]{\texorpdfstring{\protect\hypertarget{page-5-0}{}{}\textbf{BA
+Seven Standards and
+Conditions}}{BA Seven Standards and Conditions}}\label{ba-seven-standards-and-conditions-1}
+
+The MITA team evaluated and incorporated the 42 CFR Part 433 Medicaid
+Program; Federal Funding for Medicaid Eligibility Determination and
+Enrollment Activities in the BA for purposes of guiding the MITA
+stakeholders to apply the guidance to the Medicaid Enterprise.
+
+Each of the architectures aligns with the Seven Standards and
+Conditions. By utilizing best practices, industry standards, and
+technology advancements, the processes, and planning guidelines that
+build the MITA framework provide a cohesive method for meeting Medicaid
+objectives.
+
+\textbf{\hyperref[page-5-1]{Table 1-1}} depicts the impact of the Seven
+Standards and Conditions on the MITA BA, IA, and TA.
+
+\phantomsection\label{page-5-1}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4581}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1677}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1871}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1742}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0129}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Correlation of Seven Standards and Conditions with MITA Architectures
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Standards and Conditions & BusinessArchitecture &
+InformationArchitecture & TechnicalArchitecture & \\
+Modularity Standard & X & X & X & \\
+MITA Condition & X & X & X & \\
+Industry Standards Condition & X & X & X & \\
+Leverage Condition & X & X & X & \\
+Business Results Condition & X & X & X & \\
+Reporting Condition & X & X & X & \\
+Interoperability Condition & X & X & X & \\
+\end{longtable}
+
+\subsection{\texorpdfstring{\textbf{Table 1-1. Correlation of Seven
+Standards and Conditions with
+MITA}}{Table 1-1. Correlation of Seven Standards and Conditions with MITA}}\label{table-1-1.-correlation-of-seven-standards-and-conditions-with-mita-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_5_Picture_12.jpeg}}
+
+The BA includes:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Modularity Standard} Uses a modular, flexible approach to
+  systems development, including the use of open interfaces and exposed
+  Application Programming Interfaces (API); the separation of business
+  rules from core programming; and the availability of business rules in
+  both human and machine-readable formats. The States commit to formal
+  system development methodology and open, reusable system architecture.
+\item
+  \textbf{MITA Condition} States align to and advance increasingly in
+  MITA maturity for business, architecture, and data.
+\end{itemize}
+
+\textbf{Industry Standards Condition} - Ensures alignment with, and
+incorporation of, industry standards: the Health Insurance Portability
+and Accountability Act of 1996 (HIPAA) security, privacy and transaction
+standards; accessibility standards established under section 508 of the
+Rehabilitation Act, or standards that provide greater accessibility for
+individuals with disabilities, and compliance with Federal Civil Rights
+laws; standards adopted by the Secretary under section 1104 of the
+Affordable Care Act; and standards and protocols adopted by the
+Secretary under section 1561 of the Affordable Care Act.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Leverage Condition} States solutions should promote sharing,
+  leverage, and reuse of Medicaid technologies and systems within and
+  among States.
+\item
+  \textbf{Business Results Condition} Systems should support accurate
+  and timely processing of claims (including claims of eligibility),
+  adjudications, and effective communications with providers,
+  beneficiaries, and the public.
+\item
+  \textbf{Reporting Condition} Solutions should produce transaction
+  data, reports, and performance information that contribute to program
+  evaluation, continuous improvement in business operations, and
+  transparency and accountability.
+\item
+  \textbf{Interoperability Condition} Systems must ensure seamless
+  coordination and integration with the Exchange (whether run by the
+  state or federal government), and allow interoperability with health
+  information exchanges, public health agencies, human services
+  programs, and community organizations providing outreach and
+  enrollment assistance services.
+\end{itemize}
+
+\chapter[\textbf{Business Architecture
+Components}]{\texorpdfstring{\protect\hypertarget{page-6-0}{}{}\textbf{Business
+Architecture
+Components}}{Business Architecture Components}}\label{business-architecture-components-1}
+
+The BA is a conceptual construct that encompasses models, matrices, and
+templates. These components derive from a variety of industry standards
+because no single methodology exists that meets the scope of MITA. The
+MITA Framework breaks new ground and is a model for other federal,
+state, and local entities.
+
+The MITA BA contains the following components:
+
+\begin{itemize}
+\tightlist
+\item
+  Concept of Operations
+\item
+  MITA Maturity Model
+\item
+  Business Process Model
+\item
+  Business Capability Matrix
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_6_Picture_17.jpeg}}
+
+These are living models that evolve with the MITA Framework life cycle.
+The MITA team tailored the level of detail in each model to meet the
+specific needs of the intended audience.
+\textbf{\hyperref[page-7-0]{Figure 1-2}} provides an overview of the
+components of the BA. See Part I, Chapters 2 through 5 for a more
+detailed description for each of these components.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_7_Figure_3.jpeg}}
+
+\textbf{Figure 1-2}. \textbf{BA in the Context of the MITA Framework}
+
+\phantomsection\label{page-7-0}{}The MITA Framework focuses on the
+common ground shared by various distinct State Medicaid Enterprises and
+yet accommodates their differences. The BA consists of four (4)
+components that are summarized in \textbf{\hyperref[page-8-0]{Table}
+1-2}. The BA is a composite of interrelated models and templates.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_7_Picture_6.jpeg}}
+
+\subsection{\texorpdfstring{\textbf{Table 1-2. The Four Components of
+the Business
+Architecture.}}{Table 1-2. The Four Components of the Business Architecture.}}\label{table-1-2.-the-four-components-of-the-business-architecture.-1}
+
+\phantomsection\label{page-8-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0465}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2903}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3977}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2614}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0021}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0021}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Business Architecture Components
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Component & TypeofModel & Function & Relationship & & \\
+ConceptofOperations(COO)COO &
+TheCOOdescribescurrentoperations,avisionoftransformation,transformationstostakeholderrolesandinformationexchanges,andtheinfluenceofenablers(e.g.,newpolicy,legislation,technology).
+&
+EstablishesavisionfortransformationoftheStateMedicaidEnterprise.Linksenablerstotheimprovementsinbusinessprocesses.Showshowstakeholders'roleschange.Showshowprocessesanddatachange.FocusesonimprovementsintheSMAoperations.
+&
+EstablishesthetargetsandvisionthatotherBAcomponentswilladdress.ProvidesaplatformandgroundingfortheMMM
+andtheBusinessCapabilityMatrix(BCM). & & \\
+MITAMaturityModel(MMM) &
+Subdividedintofive(5)levelsofprogressivematurity,theMMMillustrateshowto
+transformgoals,objectives,andbusinesscapabilitiesprogress. &
+ShowshowtomeetStateMedicaidEnterprisegoalsandobjectivesandhowtoimprove
+businessareas.Providesbase,consistency,andmeasuresforspecifyingdetailedbusinesscapabilitiesastheymature.
+& MMM providesstructure to theCOO vision tobuild the
+BCM.Providesaframeworkandmodelforthebusinesscapabilities.MMM aligns
+withthe SevenStandards andConditionsrequirements. & & \\
+BusinessProcessModel(BPM) & The BPM is acollection ofcommon
+businessprocesses for theoperation ofMedicaidPrograms. &
+Providesamodelofmajorbusinessareasandsubareas.Providesdetailed &
+OriginatesfromtheSystemsTechnicalAdvisoryGroup(S-TAG)redesignoftheMedicaid
+& & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_8_Picture_4.jpeg}}
+
+Part I, Chapter 1 - Page 9 February 2012 Version 3.0
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0410}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3053}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2462}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4055}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0019}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Business Architecture Components
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Component & TypeofModel & Function & Relationship & \\
+&
+Atemplatecapturesthedescriptionofeachbusinessprocess.Thebusinessprocessescovercurrentandnear-termoperations.
+&
+definitionsofcommonbusinessprocesses.Describesbusinessprocessesusingacommonvocabulary.Renderssomebusinessprocessesobsoleteathigherlevelsofmaturity.
+&
+ManagementInformationSystem(MMIS)model,variousstatemodels,andtheMedicaidHIPAA-CompliantConceptModel(MHCCM)andfederalregulation.BusinessprocessesunderreviewbytheNationalMedicaidEDIHealthcare(NMEH)workgroups.ReviewandrefinementprocessundercontinualreviewbyStates.
+& \\
+BusinessCapabilityMatrix(BCM) &
+Subdividedintofive(5)levelsofmaturity,theBCMappliestheMMMtotheBPMtoderivecapabilitiesforeachbusinessprocessateachmaturitylevel.TheBCMdescribeshowto
+transformand improve abusinessprocess. &
+Showshoweachbusinessprocesscanimprove.ProvidesconsistencyandamodelfortheSMAtouseinmeasuringtheirownlevelsofmaturityforeachbusinessprocess.
+& The BCM definessix (6) businesscapabilitiesacross five (5)levels of
+maturityfor each
+businessprocess.AlignswiththeMMMforthedescriptionofthecharacteristicsofthematuritylevels.FormstheevaluationcriteriafortheStateSelfAssessment(SSA).
+& \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_9_Picture_3.jpeg}}
+
+\section[\textbf{The Concept of
+Operations}]{\texorpdfstring{\protect\hypertarget{page-10-0}{}{}\textbf{The
+Concept of
+Operations}}{The Concept of Operations}}\label{the-concept-of-operations-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_3.jpeg}}
+
+The COO is a tool used to describe current business operations and to
+develop a future transformation that meets the needs of stakeholders and
+responds to enablers (e.g., new policy, legislation, and technology).
+Other industries (e.g., the Department of Defense (DOD) or National
+Aeronautics and Space Administration (NASA)) use the COO as a
+strategic-planning device to capture the As-Is (i.e., current)
+operations,
+
+create the To-Be (i.e., future) environment, and level-set expectations
+before engaging in major transformation projects. The COO provides a
+structure to place information gathered from interviews with States and
+visioning sessions conducted at MMIS conferences. The COO structure
+provides key information including:
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of the scope of the Medicaid Enterprise.
+\item
+  Description of the As-Is (current) operations in terms of business,
+  architecture, and data.
+\item
+  Description of the drivers and enablers that propel and support
+  transformation.
+\item
+  Description of the To-Be environment in terms of business,
+  architecture, and data.
+\item
+  Description of operational scenarios with sequence of events and
+  activities carried out by stakeholders and the State Medicaid
+  Enterprise.
+\item
+  Description of the impacts on each stakeholder.
+\item
+  Description of a summary of the improvements to the State Medicaid
+  Enterprise and stakeholders.
+\end{itemize}
+
+The goal of the COO is to project changes, transformations, and provide
+visions of To-Be operations, new roles and data exchanges for
+stakeholders. The MITA COO provides a common vision shared by CMS and
+the States that preserves individual adaptations at the state level.
+
+Part I, Chapter 2, Concept of Operations, provides more information on
+the Medicaid Enterprise COO. Part I, Appendix A, Concept of Operations
+Details, contains additional information.
+
+\section[\textbf{MITA Maturity
+Model}]{\texorpdfstring{\protect\hypertarget{page-10-1}{}{}\textbf{MITA
+Maturity Model}}{MITA Maturity Model}}\label{mita-maturity-model-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_16.jpeg}}
+
+The MMM originates from industries that use such models to illustrate
+how a business can mature. The MMM adapts the industry model to the
+Medicaid Enterprise by describing Medicaid Program goals and objectives
+and the maturation of the MITA technical principles. The
+
+transformation through each of the five (5) levels represents
+significant business capabilities advances over the previous period.
+
+The MMM describes the five (5) levels of maturity and the measurable
+qualities that each level demonstrates. The general description is at a
+high enough level to apply to most aspects of State Medicaid Enterprise
+operations. For example, the MMM defines, at Level 1, the business area
+or process is in compliance with current regulations. At Level 2, the
+process matures because of pressures for cost containment and
+availability of newer tools. At Level 3, noticeable improvement occurs
+in the standardization and sharing of information
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_10_Picture_20.jpeg}}
+
+and processes among multiple entities, including the beneficiary. At
+Level 4, instant availability of clinical information increases the
+transformation. By Level 5, States and local agencies have become
+interoperable across the United States.
+
+The MMM is the point of reference for the BCM. The BCM aligns with the
+MMM to maintain consistency of definition. Part I, Chapter 3, Maturity
+Model, presents details of the MMM, and Part I, Appendix B, Maturity
+Model Details, contains the complete detailed text.
+
+\subsection[\textbf{Business Process
+Model}]{\texorpdfstring{\protect\hypertarget{page-11-0}{}{}\textbf{Business
+Process Model}}{Business Process Model}}\label{business-process-model-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Figure_5.jpeg}}
+
+The BPM is a collection of common business processes for the operation
+of Medicaid Programs. A template describes those processes, including
+current and near-term operations as defined in Level 3 of the BCM. The
+MITA Framework BPM
+
+derives from multiple sources that create a common model that reflects
+most State Medicaid Enterprises -- notable sources include the S-TAG
+\emph{Redesign of the Medicaid Management Information System (MMIS),}
+and the CMS MHCCM, that consolidates business processes from a dozen
+States.
+
+States should develop business workflows for the different business
+functions of the state to advance the alignment of the state's
+capability maturity with the MMM. These business workflows should align
+to any provided by CMS in support of Medicaid and Exchange business
+operations and requirements. States should work to streamline and
+standardize these operational approaches and business workflows to
+minimize customization demands on technology solutions and optimize
+business outcomes.
+
+There are those business processes that all States perform (e.g., Enroll
+Provider) and those that are voluntary and depend on implementation of
+special programs within a state (e.g., pay Managed Care Organization
+capitation or enrollment of member in a special program). The BPM
+defines common business practices across all State Medicaid Enterprises.
+The MITA Framework BPM offers a hierarchy of Tier 1 business areas, Tier
+2 business categories and Tier 3 business processes. The MITA Framework
+contains ten (10) business areas divided into twenty-one (21) business
+categories with eighty (80) individual business processes. See Part I,
+Appendix C, Business Process Model Details.
+
+The BPM provides a Business Process Template (BPT) for describing each
+business process. The BPT provides a summary of the business process,
+trigger event and result, activity steps, data requirements, predecessor
+and successor processes, failure points, and other elements. The NMEH
+workgroups review business processes, and they stand to benefit from
+ongoing review by state workgroups. See Part I, Chapter 4, Business
+Process Model, for a detailed presentation of the BPM and Part I,
+Appendix C, Business Process Model Details, for the complete set of
+business area definitions and business process descriptions.
+
+\section[\textbf{Business Capability
+Matrix}]{\texorpdfstring{\protect\hypertarget{page-11-1}{}{}\textbf{Business
+Capability
+Matrix}}{Business Capability Matrix}}\label{business-capability-matrix-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Picture_12.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_11_Picture_13.jpeg}}
+
+Applying the MMM to each business process yields the BCM that shows how
+the business process matures. The BCM defines six (6) business
+capabilities with five (5) levels of maturity to each business process.
+The BCM assigns capabilities to an individual business process rather
+than to SMA operations taken as a whole. In reality, no SMA is ``all
+Level 1'' or ``all Level 2,'' but rather having
+
+a blend of different levels of capability. An example of the
+relationship among the business process, the MMM, and the BCM is shown
+in \textbf{\hyperref[page-12-0]{Table} 1-3.}
+
+Part I, Chapter 5, Business Capability Matrix, presents more information
+on the BCM and Part I, Appendix D, Business Capability Matrix Details,
+lists the capabilities defined for business processes contained in MITA
+Framework.
+
+\subsection{\texorpdfstring{\textbf{Table 1-3. Business Process Example:
+Authorize
+Service}}{Table 1-3. Business Process Example: Authorize Service}}\label{table-1-3.-business-process-example-authorize-service-1}
+
+\phantomsection\label{page-12-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0603}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2496}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.6868}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0034}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Authorize Service Business Process
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+LevelNo. & MITAMaturityModelDefinition & BusinessCapability & \\
+1 &
+Complieswithregulations;mostlymanualactivities;delaysincommunicatingresults.
+&
+Receiptofandresponsetorequestsareprimarilyviapaper,fax,andphone;applypolicyguidelinesmanually;complieswithregulationsonturnaroundtimeandaccuracy.
+& \\
+2 &
+Improvementsspearheadedbycostmanagementgoals;improvementsmadeinspeedofcommunicationandresponse.
+&
+Authorizationofservicegivengreaterpriorityasacost-managementtool;improvementsmadeincommunications;receiptofandresponsestorequestsmadeviaportal;adopt
+HIPAAstandards. & \\
+3 &
+Informationandservicessharedwithotheragenciesandbeneficiary;streamlinedprocess;improvedresults.
+&
+Solutionsbecomereusableandsharablebecauseofadoptionofstandardsbystateagenciesanddata-sharingagreementstocollaborateonauthorizationofservices.
+& \\
+4 &
+Incorporatesclinicalinformationintotheprocesstofurtherimproveresults. &
+Directaccessbytheauthorizingagencytoaccess to
+clinicalinformation;automationofrequests;render
+decisionsbypayerautomaticallyasprovider
+updatesbeneficiary'selectronichealthrecord;improve
+accuracybecauseprovider basesdecisionsonclinicalevidence;limits
+manualinterventiontoexceptions. & \\
+5 &
+Demonstrateswidespreadinteroperabilitytoachievemaximumimprovementsenvisionedatthistime.
+&
+Directaccessbytheauthorizingagencytoclinicalandadministrativeinformationanywhereinthecountrytoconfirmordenytheauthorizationforaservice.
+& \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_12_Picture_6.jpeg}}
+
+\chapter[\textbf{Business Architecture Component
+Relationships}]{\texorpdfstring{\protect\hypertarget{page-13-0}{}{}\textbf{Business
+Architecture Component
+Relationships}}{Business Architecture Component Relationships}}\label{business-architecture-component-relationships-1}
+
+The four (4) components of the BA are interrelated:
+
+\begin{itemize}
+\tightlist
+\item
+  The COO serves as a model to frame a vision for Medicaid Program
+  health care outcomes and operational efficiencies. It establishes the
+  To-Be environment that becomes the goal of the Medicaid Enterprise
+  transformation. The COO provides the vision for the MMM. It also
+  supplies an overview for the BPM.
+\item
+  The MMM uses a common industry approach to describe the differences
+  between five (5) levels of progressive maturity, ranging from As-Is
+  operations to the To-Be environment. The MMM is the point of reference
+  used by the BCM to describe the levels of maturity for a business
+  process.
+\item
+  The BPM describes As-Is (i.e., current) Medicaid operations as defined
+  for Level 3 of the BCM.
+\item
+  The BCM uses the five (5) levels of maturity described in the MMM and
+  the To-Be environment defined in the COO to create definitions for
+  business capabilities at five (5) levels of maturity for each business
+  process.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Figure_8.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Figure_9.jpeg}}
+
+\subsection{\texorpdfstring{\textbf{Figure 1-3. Relationship Among the
+Components of the Business
+Architecture}}{Figure 1-3. Relationship Among the Components of the Business Architecture}}\label{figure-1-3.-relationship-among-the-components-of-the-business-architecture-1}
+
+\phantomsection\label{page-13-1}{}\pandocbounded{\includegraphics[keepaspectratio]{_page_13_Picture_11.jpeg}}
+
+\chapter[\textbf{Connection Between
+Architectures}]{\texorpdfstring{\protect\hypertarget{page-14-0}{}{}\textbf{Connection
+Between
+Architectures}}{Connection Between Architectures}}\label{connection-between-architectures-1}
+
+The MITA Framework consists of three (3) interrelated BA, IA, and TA
+components that work together to define a business-driven enterprise
+transformation. The BA describes the business process activities along
+with data input, data output, and required shared data. The IA provides
+the bridge between the business need of information and the technical
+solution data. The TA describes the technology enablers associated with
+the business capabilities and their varied levels of maturity.
+
+\textbf{\hyperref[page-14-1]{Figure 1-4}} illustrates how BA, IA, and TA
+components interrelate. This is a high-level view of the primary
+components within each architecture. Front Matter, Chapter 6,
+Introduction to the MITA Framework, presents a detailed discussion on
+the inter-relationship of all three (3) architectures. The BA
+categorizes the business processes as business capabilities and assigned
+a level of MITA maturity. Based on the level of maturity, the IA defines
+the Conceptual Data Model (CDM) and Logical Data Model (LDM) with
+necessary data attributes for the design of technical capabilities. The
+TA defines the resulting business services and technical services for
+the To-Be environment of the State Medicaid Enterprise.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_14_Figure_5.jpeg}}
+
+\textbf{Figure 1-4. Relationships Among Components of the BA, IA, and
+TA}
+
+\phantomsection\label{page-14-1}{}The BA does not present specific
+technical solutions or detailed data requirements. Some of its
+components, however, point to specific companion components in the IA
+and TA sections of MITA Framework (Parts II and III, respectively).
+\textbf{\hyperref[page-15-0]{Table} 1-4} describes the name of the BA
+Component and its relationship to the other architecture component as
+well as its MITA Framework 3.0 documented location.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_14_Picture_8.jpeg}}
+
+\subsubsection{\texorpdfstring{\textbf{Table 1-4. Component
+Relationships of the BA, IA, and
+TA}}{Table 1-4. Component Relationships of the BA, IA, and TA}}\label{table-1-4.-component-relationships-of-the-ba-ia-and-ta-1}
+
+\phantomsection\label{page-15-0}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3900}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1876}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4165}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0030}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0030}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+BA, IA, and TA Component Relationships
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+BusinessArchitectureComponent & OtherArchitectureComponent &
+Relationship & & \\
+COO--DataExchanges & IA(PartII)--Allchapters &
+IAchaptersprovidedetailsregardingthetransformationofdataandinformationidentifiedintheCOO.
+& & \\
+COO--Drivers andEnablers & TA(PartIII), Chapter2,Technical
+ManagementStrategy;Chapter7,TechnicalCapabilityMatrix & Service-Oriented
+Architectures(SOA)andTechnicalCapabilitiesareenablersreferencedintheCOO.
+& & \\
+BPM--TriggerEvent,Result,andSharedDataineachbusinessprocessdescribeingeneraltermsthekindofdatareceivedby,usedby,andresultingfromeachbusinessprocess
+& IA(PartII),
+Chapter2,DataManagementStrategy;Chapter3,ConceptualDataModel &
+DataManagementStrategy(DMS)explainshowthedatasupportsthebusinessprocesses.TheCDMidentifiesgroupingsofinformationcommontoMedicaidbusinessareasandclustersofbusinessprocesses.
+& & \\
+BCM & IA(PartII), Chapter4,LogicalDataModel; Chapter 6Information
+Capability Matrix & TheLDM
+definesdataclassesandattributesneededtosupportdifferentlevelsofmaturity.AbusinessprocessdescribedataLevel3businesscapabilityrequiresLevel3dataattributes.
+& & \\
+BCM & TA(PartIII), Chapter7,TechnicalCapabilityMatrix &
+TheBCMdrivestheTechnicalCapability Matrix (TCM).TAassociates technical
+capabilitieswiththeBCMlevelwherespecifictechnologyisnecessarytosupportthebusinessprocess.
+& & \\
+BCM--Level3andabove & TA(PartIII), Chapter 2Technical
+ManagementStrategy; Chapter3,BusinessServices &
+Abusinessserviceisanimplementationofaspecificbusinessprocessataspecificlevelofcapability.TA
+associatesbusiness servicesandSOAwithBCMLevel3andabove. & & \\
+\end{longtable}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_15_Picture_4.jpeg}}
+
+\chapter[\textbf{Using the Business
+Architecture}]{\texorpdfstring{\protect\hypertarget{page-16-0}{}{}\textbf{Using
+the Business
+Architecture}}{Using the Business Architecture}}\label{using-the-business-architecture-1}
+
+CMS requires States to align to and advance increasingly in MITA
+maturity for business, architecture, and data. CMS expects States to use
+the BA components to plan for improvements in the State Medicaid
+Program, both in the delivery of services to providers and
+beneficiaries, and in its internal operations and exchanges of
+information with the other external stakeholders. BA provides the COO
+and the MMM as background material. States and vendors use the BPM and
+the BCM tools. \textbf{\hyperref[page-16-1]{Table} 1-5} summarizes how
+stakeholders use the BA.
+
+\phantomsection\label{page-16-1}{}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0861}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.9104}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0035}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Stakeholder Useof the Business Architecture
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stakeholder & HowStakeholders Use BA & \\
+SMA & The
+SMAmapstheiroperationstotheBPMandthenassessesthelevelofmaturityusingtheBCM.Whenthe
+SMArequires
+informationtechnologyupgradestosupportprogramimprovement,theSMAusestheSS-Atoshowhowit
+will use
+theenhancedfundingtoachieveaspecificresult(e.g.,movingfromLevel1or2toLevel3).
+& \\
+CMS &
+CMSprovidesleadershipinestablishingtheMITAguidelinesandpromotingthemamongStates.ThroughthereleaseoftheMITAFramework,specialworkshopswithStates,Medicaidconferencematerial,andworkingwithearlyadopterStates,CMSprovides
+guidance and principles to achieve the Medicaidvision. & \\
+Vendors &
+ThevendorcommunityusestheMITAFrameworkasareferenceinplanningtheirresearchanddevelopmentactivities.TheyusetheBA,inparticular,todeterminethematurityleveloffunctionssupportedbytheirsystems.Theyhaveacommonunderstandingofthe
+CMS directionfor the Medicaid
+Program,andtheycanshowhowtheirproductssupportMITAcapabilities. & \\
+Providers & Providersplayanactiveroleintheexchangeofinformationwiththe
+SMA.
+TheycanlookattheSMABAtounderstandwhatdirectiontheSMAistakingandtokeepthisinmindastheyinvestininformation
+technologyupgradesandreengineertheirpractices.Insomecases,the
+SMAinvolveprovidersdirectlyinplanningaMedicaidProgramtransformation.
+& \\
+Beneficiaries & The BA supports the SMAperson-centric outreach,
+eligibility and enrollmentactivities across the health and human
+services spectrum.Beneficiariesandconsumergroupsare
+abletolookattheSMABAandidentify thebenefits.AtLevel3business capability
+maturity,beneficiariesareparticipantsinselfdirectedhealthcaredecisions.
+& \\
+Legislators,Governors &
+StatesdeveloppresentationsbasedontheBAtoshowthegovernorandlegislatorswhatgoalsCMSisestablishingforStatesthatrequestenhanced
+& \\
+\end{longtable}
+
+\subsection{\texorpdfstring{\textbf{Table 1-5. Stakeholder Use of the
+Business
+Architecture}}{Table 1-5. Stakeholder Use of the Business Architecture}}\label{table-1-5.-stakeholder-use-of-the-business-architecture-1}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_16_Picture_6.jpeg}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1842}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8008}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0075}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0075}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Stakeholder Useof the Business Architecture
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stakeholder & HowStakeholders Use BA & & \\
+& funding. & & \\
+OtherPayersandOtherAgencies & The MITA team invites other
+payersandotheragenciestoreviewtheMITAFramework,especiallytheBA,tolearnabouttheMedicaidEnterprisetransformation.
+& & \\
+\end{longtable}
+
+In general, MITA supports stakeholder roles and access to information,
+technology that eliminates most manual activities, and the
+transformation of the Medicaid business with the assistance of the CMS,
+the SMA, providers, and beneficiaries. In addition, MITA supports
+providers with instant access to patient records no matter what their
+location is, patients can view their Personal Health Information (PHI)
+and make informed decisions regarding treatment, and payers can view
+clinical records nationally to expedite decisions on prior authorization
+and payment.
+
+\section[\textbf{Next Steps in Developing the Business
+Architecture}]{\texorpdfstring{\protect\hypertarget{page-17-0}{}{}\textbf{Next
+Steps in Developing the Business
+Architecture}}{Next Steps in Developing the Business Architecture}}\label{next-steps-in-developing-the-business-architecture-1}
+
+The MITA Framework delivers the starter kit for a controlled State
+Medicaid Enterprise transformation. MITA will continue to evolve over
+time. The business process defines the input and output of information
+but not the details of the process; however the business community will
+still decide the requirements for standardized triggers and results. The
+CMS MITA team continues to support SMA efforts by serving as a conduit
+for improvements to MITA models that all States and vendors can access.
+
+The MITA Framework and the BA are ever evolving so that the SMA can
+continuously improve the way they deliver services to beneficiaries and
+providers, account for outcomes, reward participants based on
+performance, and respond dynamically to requests for information.
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_17_Picture_7.jpeg}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{_page_17_Picture_9.jpeg}}
+
+\chapter{Business Process Model}\label{business-process-model-2}
+
+\part{Information Architecture}
+
+\part{Technical Architecture}
+
+\part{Artifacts and References}
+
+\part{Help Improve this Content}
+
+
+
+
+\end{document}
