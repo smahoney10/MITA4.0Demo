@@ -20,8 +20,21 @@ book:
       - text: How is MITA 4.0 different?
         file: mitaDiffernt.qmd
     - text: "---"
-    - part: State Self-Assessment Playbook
-      file: alignMITA.qmd
+    - part: State Self-Assessment 
+      chapters:
+        - text: SS-A Playbook
+          file: alignMITA.qmd      
+    - text: "---"
+    - part: MITA Capability Reference Architecture
+      chapters:
+        - text: Model Overview
+          file: capabilityOverview.qmd
+        - text: Data Management Capabilities
+          file: IAcapabilityModel.qmd  
+        - text: IA Maturity Criteria
+          file: IAMaturityCriteria.qmd
+        - text: Data Reference Model
+          file: IAReferenceModel.qmd
     - text: "---"
     - part: Business Architecture
       chapters:
@@ -36,8 +49,26 @@ book:
 
     - text: "---"
     - part: Information Architecture
+      chapters:
+        - text: Information Architecture Introduction
+          file: InformationArchitectureIntroduction.qmd
+        - text: Data Management Capabilities
+          file: IAcapabilityModel.qmd  
+        - text: IA Maturity Criteria
+          file: IAMaturityCriteria.qmd
+        - text: Data Reference Model
+          file: IAReferenceModel.qmd
     - text: "---"  
     - part: Technical Architecture
+      chapters:
+        - text: TA Architecture Introduction
+          file: InformationArchitectureIntroduction.qmd
+        - text: Technical Management Capabilities
+          file: IAcapabilityModel.qmd  
+        - text: TA Maturity Criteria
+          file: IAMaturityCriteria.qmd
+        - text: TA Reference Model
+          file: IAReferenceModel.qmd
     - text: "---"
     - part: Artifacts and References
       chapters:
