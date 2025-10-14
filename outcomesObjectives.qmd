@@ -1,0 +1,213 @@
+---
+title: "Outcomes-based Planning Companion Guide"
+format: html
+toc: true
+---
+
+# Introduction
+
+## Background
+
+CMS-required outcomes are based on statutory or regulatory requirements and provide a baseline for what is required of a Medicaid Enterprise System (MES). These outcomes are outside of the Outcomes-based Planning (OBP) process. This document will focus on State-specific outcomes. State-specific outcomes are developed by states and should be measurable, achievable, and reflect the short-term goals of the MES project. Metrics provide measurable evidence that the outcomes are achieved on an ongoing basis. States are required to report on the system’s performance to CMS as a condition for receiving enhanced funding.
+
+## Purpose
+
+Document what outcomes are, why you should use the OBP process to develop your state-specific outcomes, how outcomes connect to the MITA 4.0 State Self-Assessment (SSA), triggers and objectives for OBP, and the OBP process.
+
+# What is an Outcome?
+
+Outcomes can take many forms and represent different things to different audiences. For OBP, an outcome is a well-defined, observable, and measurable change in the existing situation that focuses on the end impact of those affected. It expresses changes as benefits, by improving capabilities within an organization or for its stakeholders.
+
+**Characteristics of an ideal outcome:**
+1. **Change** – What are we changing?
+2. **Affected Stakeholders** – Who and what will it impact?
+3. **Benefits** – What are the benefits of the change?
+4. **Capability** – What new or improved capabilities are required to make this change happen?
+
+**Example:**  
+Improve provider satisfaction ratings by 15% within the next six months.
+
+- **Change:** Improve satisfaction with the Provider Enrollment approval timeline by providing additional interactive channels to resolve issues.
+- **Affected Stakeholders:** Providers, Provider Organization, State users, etc.
+- **Benefits:** Quicker onboarding of providers, provider retention, decreases state staff workload.
+- **Capability:** Enhancement to redefine the Provider Enrollment process such as incorporating real-time updates to the workflow and adding interactive channels to provide real-time issue resolution.
+
+# Purpose of the Outcomes-based Planning Process
+
+1. **Consistent and repeatable process:** Ensures outcomes are identified consistently across the organization.
+2. **Sustainable:** Can be applied regardless of the team or individuals involved.
+3. **Transparency:** Provides transparency into the outcome identification process.
+4. **Traceability:** Ensures outcomes are traceable to the original challenge or opportunity.
+5. **Continuous Improvement:** Ensures outcomes are regularly reviewed and refined.
+
+**Other benefits:**
+- Efficient resource allocation
+- Improved accountability
+- Enhanced collaboration
+
+# How does the State Self-Assessment (SS-A) and OBP fit into the agency’s existing processes?
+
+Using the Plan-DO-Check-Act (PDCA) cycle:
+
+| Plan | OBP (Outcomes-based Planning) | Define outcomes (State/CMS) and metrics; Identify the change, benefits, capabilities, and stakeholders |
+|------|------------------------------|--------------------------------------------------------------------------------------------------------|
+| Do   | Planning Advance Planning Document (PAPD), APD, Planning & Execution | PAPD/APD process for funding the project; Project / Program planning; Delivery (DDI/Enhancements)      |
+| Check| SS-A, Operational Review Cycles, Certification | Check and validate the outcomes using metrics                                                          |
+| Call to Action (Trigger) | Internal Triggers, External Triggers | Capture gaps and prioritize (internal); Capture regulatory requirements and prioritize (external)      |
+
+# Objectives and Triggers
+
+OBP is a strategic approach that places system improvements at the center of MES investments. It enables states to define the value their system investments are expected to deliver, track progress through measurable indicators, and demonstrate return on investment.
+
+## Key Objectives
+
+### 1. Demonstrate the Value of System Investments
+
+OBP articulates the value that system investments bring to state Medicaid program goals, improving operations, and delivering measurable benefits to enrollees.  
+**Example:**  
+A 30% reduction in provider enrollment processing time, enabling newly credentialed providers to begin serving patients more quickly.
+
+### 2. Improve Program Performance Through Strategic Alignment
+
+OBP aligns system investments with Medicaid program priorities and operational needs.  
+**Example:**  
+Achieving real-time eligibility verification in 90% of cases.
+
+### 3. Strengthen Organizational Readiness and Capability
+
+OBP ensures system improvements are accompanied by organizational conditions needed for success, such as change management and workforce development.  
+**Example:**  
+Decreasing average eligibility determination time by 25% within six months.
+
+### 4. Create a Culture of Measurement and Accountability
+
+OBP encourages a results-oriented management culture, where success is measured by tangible impact on Medicaid program performance and beneficiary outcomes.
+
+### 5. Enable Consistency and Reusability Across State Projects
+
+OBP supports a structured, repeatable approach to articulating goals and expected impact, promoting consistency across projects and enabling reusability.
+
+## Triggers for OBP
+
+1. Initiating a New System Modernization or Module Implementation
+2. Transitioning from Legacy Systems or Vendors
+3. MITA State Self-Assessment Results
+4. Modernization of Cross-Module Business Processes
+5. Shifts in Medicaid Policy or Strategic Direction
+6. Operational Reviews or Performance Audits
+7. Response to Ad Hoc Incidents and Corrective Actions
+
+# Roles and Responsibilities
+
+| Roles | Responsibilities |
+|-------|------------------|
+| Subject Matter Experts (SMEs) | Clarify business needs and outcomes; Provide expertise |
+| State Medicaid Executives & Senior Managers | Review/update strategic plans; Determine goals/objectives; Oversee alignment; Designate Outcome champion |
+| MITA Project Team | Manage process/documentation; Develop plans; Select tools/templates; Coordinate activities |
+| Solution Development Life Cycle Project Managers & PMO | Lead execution; Define scope/schedule/resources; Monitor risks/quality/performance |
+| Business Architecture SMEs | Evaluate processes/maturity; Identify capabilities; Conduct gap analysis |
+| Information Architecture SMEs | Assess data models/strategy; Determine maturity; Perform crosswalk/gap analysis |
+| Technical Architecture SMEs | Evaluate technical capabilities; Determine desired maturity; Map enablers to goals |
+
+# How Outcomes-based Planning integrates into MITA 4.0
+
+MITA 4.0 incorporates TOGAF’s definition of a capability as the ability to accomplish a specific outcome or goal. OBP helps mature and refine capabilities over time. Capabilities are business-focused, emphasizing results and strategic objectives. By focusing on capabilities, SMAs can better align resources and processes with strategic goals, improving outcomes.
+
+# Outcomes-based Planning Process
+
+1. **Identify the business challenge:** Describe the “as-is” state.
+2. **Identify goals:** Main concern and blockers.
+3. **Identify drivers and pain points:** Tangible, real-world, observable.
+4. **Summarize challenge and drivers:** Business challenge statement.
+5. **Develop desired outcomes:** Changes/improvements/benefits for the “to-be” state.
+6. **Identify audience and capability:** Who benefits and what capability is needed.
+7. **Summarize in Outcome Statement.**
+8. **Determine measurement:** How to measure, monitor, and report progress.
+9. **Define success:** SMART objective.
+10. **Map outcomes to MITA capability areas.**
+11. **Identify tasks and organize into projects.**
+12. **Track and assess progress.**
+13. **Routinely reassess and adapt.**
+
+# Outcomes-based Planning Template
+
+The Excel template helps states define outcomes and metrics by identifying change, benefits, capabilities, stakeholders, and defining an iterative process.
+
+## Step 1: Identify Specific Pain Points
+
+| Trigger | Dropdown menu of triggers |
+|--------|--------------------------|
+| Goal | What is the goal? (e.g., Reduce Provider Enrollment process turnaround) |
+| Root Causes | What prevents the goal? (e.g., Manual, paper-based enrollment) |
+| Pain Points | Barriers to success (e.g., Wet signature required, errors in application) |
+
+## Step 2: Identify Desired Outcomes
+
+| Business Outcome | What do you want to achieve? (e.g., Automate Provider Enrollment Process) |
+| Affected Stakeholder | Who is impacted? (e.g., Providers, Staff) |
+| Benefits | What benefits will stakeholders see? (e.g., Reduced burden, decreased turnaround time) |
+| Capability | What new capability is needed? (e.g., Provider Enrollment MES Automation) |
+| Outcome Statement | Format: [Stakeholder] can [Capability] (under what conditions), resulting in [Benefit] |
+
+## Step 3: Determine How to Measure Achievement/Performance and Define Success
+
+| Metric Baseline | Current state (e.g., 72 hours average turnaround) |
+| Improvement Metric or Milestone | Target (e.g., Reduce by 75%) |
+| Success Factor | What indicates success? (e.g., Process automated) |
+| Evidence | Document incremental improvements |
+| Reporting Period | Timeframe (e.g., 12 months) |
+
+## Step 4: Map Outcomes to Capabilities
+
+| MITA Capability Area | MITA 4.0 areas (prefilled) |
+| MITA Capability | State-specific capabilities |
+| Mapped Outcome IDs | Outcome IDs mapped to capabilities |
+| Capability Maturity from last SS-A | Latest SS-A results |
+| Target Maturity | Target based on outcomes |
+
+# Appendix A: Definitions
+
+| Term | Definition |
+|------|------------|
+| Actor | Person/system/org performing an action to achieve an objective |
+| Audience | Person/system/org receiving the result/benefit |
+| Benefit | Improvement in performance/conditions experienced by audience |
+| Business Challenge | Situation impeding a business goal (includes Concern and Drivers) |
+| Capability | Ability to achieve a desired objective under specified conditions |
+| Concern | High-priority business problem impeding a goal |
+| Driver | Factor causing/inhibiting achievement of goals |
+| Measure | Objective attribute as raw data (number/value) |
+| Metric | Combination of measures/data for business context |
+| Milestone | Qualitative metric; binary achievement |
+| Goal | Broad, general statement of desired accomplishment |
+| Objective | Specific, measurable thing to achieve within a timeframe |
+| Outcome | Defined, observable change demonstrated by metric/milestone |
+| Success Factor | Essential activity/condition enabling achievement |
+
+# Appendix B: Metric Guidance
+
+Once a state establishes its outcome statement, it needs supporting metrics. Metric data is evidence of accomplishment. Well-designed metrics enhance transparency, accountability, and continuous improvement.
+
+**Considerations:**
+- What quantifiable metrics demonstrate module/system meets outcome?
+- How do metrics assess program results?
+- What is the current baseline?
+
+**Examples:**
+- Average time to screen a provider.
+- Number of ER/hospital readmissions (for preventive care services outcome).
+- Percent of patient engagement within 30 days after discharge.
+
+Setting a timebound benchmark establishes a clear, measurable target for improvement.
+
+_Source: CMS MES Certification Repository: Writing a Good Outcomes Statement_
+
+# Appendix C: Example Business Flow
+
+Using the MES IT investment lifecycle:
+
+- **Planning phase:** Develop initial outcomes for new module and refine with CMS.
+- **Development phase:** Prepare for Operational Readiness Review (ORR) with CMS.
+- **Production phase:** Prepare for final CR with CMS.
+
+_Source: CMS MES Certification Repository: SMC Process Overview_

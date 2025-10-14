@@ -1,0 +1,16 @@
+How does the State Self-Assessment (SS-A) and OBP fit into the agency’s existing processes?
+Using the industry standard Plan-DO-Check-Act (PDCA) cycle, the following table captures the relationship between the SS-A, OBP, and existing processes within a state agency.
+Plan	•	OBP (Outcomes-based Planning)	•	Define outcomes (State/CMS) and metrics
+•	Identify the change, benefits, capabilities, and stakeholders
+Do	•	Planning Advance Planning Document (PAPD)
+•	APD
+•	Planning & Execution	•	PAPD/APD process for funding the project
+•	Project / Program planning 
+•	Delivery (Design, development, Implementation (DDI)/ Enhancements)
+
+Check	•	SS-A 
+•	Operational Review Cycles
+•	Certification 	•	Check and validate the outcomes using metrics
+Call to Action (Trigger)	•	Internal Triggers
+•	External Triggers 	•	Capture the gaps and prioritize (internal triggers) 
+•	Capture the external triggers like regulatory requirements and prioritize (external triggers)

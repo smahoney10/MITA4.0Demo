@@ -31,7 +31,6 @@ The MITA 4.0 Capability Reference Model is designed to identify the key capabili
 •	Capability Domain - High-level capability used to group common capabilities
 •	Capability Area – Detailed capabilities that decomposes the capability domain into sub-capabilities that can be used by SMA’s to classify their capabilities. There are one to many distinct Capability Areas for each Capability Domain.  Each Capability Area can have one to many distinct Capabilities defined within it .
 
-![MITA 4.0 Capability Reference Model Structure](media/capabilityStructure.png "MITA 4.0 Capability Reference Model Structure")
 
 
 ## Model Application

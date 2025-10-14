@@ -20,6 +20,21 @@ book:
       - text: How is MITA 4.0 different?
         file: mitaDiffernt.qmd
     - text: "---"
+    - part: Outcomes Based Planning 
+      chapters:
+        - text: Introduction
+          file: outcomesIntro.qmd      
+        - text: What is an outcome?
+          file: outcomesDefintion.qmd      
+        - text: Objectives and Triggers
+          file: outcomesObjectives.qmd      
+        - text: Outcomes and MITA 4.0
+          file: outcomesMITA40.qmd 
+        - text: Outcomes-Based Planning Process
+          file: outcomesPlanning.qmd           
+        - text: Template
+          file: outcomesTemplate.qmd      
+    - text: "---"
     - part: State Self-Assessment 
       chapters:
         - text: SS-A Playbook
