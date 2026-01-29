@@ -1,71 +1,33 @@
-![](media/mitaLogo/mitaLogo.png)
+---
+title: "Welcome to MITA 4.0"
+---
 
 
-The Medicaid Information Technology Architecture (MITA) Framework is an initiative by the Centers for Medicare & Medicaid Services (CMS) in partnership with State Medicaid Agencies (SMAs) and Medicaid systems vendors. It aims to establish national guidance and best practice references for processes, data standards, and technologies that facilitate planning and enhance program administration for State Medicaid Enterprises. Building upon the foundation of previous versions, MITA 4.0 supports the Medicaid mission and goals by facilitating integrated business and information technology transformations. This version refines, refocuses, and repurposes MITA to better align with the evolving needs of SMAs.
 
-MITA 4.0 introduces several new approaches to enhance its relevance and accessibility, with the goal of making it more meaningful for stakeholders while streamlining processes to reduce the burden on state agencies. The framework incorporates various state agency viewpoints to improve efficiency and better align with the Advanced Planning Document process, certification outcomes, and state agency acquisition processes. Additionally, MITA 4.0 provides guidance that reflects current healthcare and IT trends, ensuring that it remains at the forefront of technological advancements.
+## Welcome to MITA 4.0
 
-By focusing on these enhancements, MITA 4.0 ensures that technology decisions align with Medicaid business needs, optimizing adaptability, flexibility, interoperability, and data sharing. This evolution enables significant improvements in policy, decision-making, and daily operations, ultimately advancing the capabilities of State Medicaid Enterprises.
+Welcome to the MITA 4.0 documentation. This resource provides comprehensive guidance on understanding, implementing, and maximizing the benefits of MITA 4.0 for Medicaid Enterprise Systems (MES).
 
-## What is MITA
+### What is MITA 4.0?
 
-- MITA Framework is a consolidation of principles, models, and guidelines that combine to form a template for the States to use to develop their own enterprise architectures.
-- MITA processes provide guidance for State Medicaid Enterprise to use in adopting the MITA Framework through shared leadership, collaboration, and reuse of solutions.
-- MITA planning guidelines help States prepare the MITA State Self-Assessment (SS-A) and Roadmap to develop enterprise architectures to align to and advance increasingly in MITA maturity for business, architecture, and data. The guidelines serve as the basis for a state’s requests for appropriate Federal Financial Participation (FFP) for their Medicaid Management Information Systems (MMIS) as well as Medicaid Information Technology (IT) system(s) projects related to eligibility determination and enrollment functions.
+The Medicaid Information Technology Architecture (MITA) 4.0 is a framework designed to help states and territories develop and implement enterprise-wide information technology systems that support Medicaid business processes. MITA 4.0 represents the latest evolution of this framework, incorporating modern approaches to enterprise architecture and outcomes-based planning.
 
-## Standards and Conditions
+### Getting Started
 
-The MITA framework plays an important role in helping states meet the standards and conditions outlined in [Standards and Conditions within 42 CFR 433.112](https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-C/part-433/subpart-C/section-433.112) required for enhanced federal financial participation (FFP) for Medicaid technology investments funded through an approved APD. By providing a structured approach to planning and development, MITA assists states in aligning their technology solutions with Medicaid business needs and federal requirements. It encourages the use of modular, flexible systems that promote interoperability and data sharing, ensuring that states can effectively coordinate with other health services and systems. MITA also guides states in preparing their Advanced Planning Document (APD) submissions, offering a roadmap to compliance and efficiency. This alignment not only facilitates adherence to federal standards but also supports states in achieving their Medicaid program goals more efficiently, effectively, and sustainably,  optimizing adaptability and enhancing overall program administration.
+Use the navigation menu to explore:
 
-## MITA 4.0 Goals
+- **Introduction to MITA 4.0**: Learn about what MITA 4.0 is, its new features, benefits, and how to use it effectively
+- **Understanding MITA 4.0**: Deep dive into the core concepts including outcomes-based planning, capabilities, business functions, and state self-assessment
+- **Implementing MITA 4.0**: Step-by-step guidance for implementing MITA 4.0 in your organization
+- **MITA Reference Models**: Access comprehensive reference models for capabilities, business processes, information, and technology
+- **Tools and Resources**: Utilize practical tools and templates to support your MITA implementation
 
-- Develop seamless and integrated systems that communicate effectively to achieve common Medicaid goals through interoperability and common standards.
-- Promote an environment that supports flexibility, adaptability, and rapid response to changes in programs and technology.
-- Promote an enterprise view that supports enabling technologies that align with Medicaid business processes and technologies.
-- Provide data that is timely, accurate, usable, and easily accessible in order to support analysis and decision making for health care management and program administration.
-- Provide performance measurement for accountability and planning.
-- Coordinate with public health and other partners to integrate health outcomes within the Medicaid community.
+### Key Benefits
 
-## MITA 4.0 Design Principles
+- Improved alignment between business needs and technology solutions
+- Enhanced interoperability across systems
+- Better outcomes measurement and tracking
+- Streamlined state self-assessment processes
+- Alignment with CMS requirements and guidance
 
-During the development of MITA 4.0, workgroup participants identified a set of core principles designed to prioritize updates MITA 3.0 that make MITA more meaningful and accessible to SMAs. These principles ensure that MITA remains a relevant and valuable tool for State Medicaid Agencies and their stakeholders.
-
-**Define Clear Linkages Between Capabilities and Outcomes**:
-Establish clear definitions for both MITA Capabilities and Outcomes, and articulate the relationship between outcomes and the MITA architectures. This principle ensures that every capability is directly aligned with desired outcomes, linking strategic objectives with operational execution in a coherent framework.
-
-**Business-Driven Transformation**:
-Define business transformations with a focus on aligning IT solutions with both common and unique state needs. This principle ensures that technology initiatives are directly informed by business objectives, leading to more effective and tailored solutions.
-
-**Standards First**:
-Promote data and technical standards to improve IT development cost-effectiveness. By prioritizing standards, we aim to streamline processes and reduce complexity, ultimately enhancing interoperability and efficiency.
-
-**Reduce Burden on SMAs**:
-Simplify processes and requirements to alleviate the administrative load on State Medicaid Agencies, enabling them to focus more on service delivery and less on compliance.
-
-**Enable Automation**:
-Encourage the adoption of automated processes to increase efficiency and accuracy in Medicaid operations, reducing manual intervention and the potential for errors.
-
-**Release Guidance Aligned with Current Trends**:
-Provide guidance that reflects the latest trends in healthcare and IT, ensuring that MITA 4.0 remains relevant and forward-looking in its approach to Medicaid management.
-
-**Integrate with Other Activities**:
-Enhance the integration of MITA with related activities such as APD development, Certification, T-MSIS reporting, and state procurement processes. This principle aims to create a cohesive framework that supports comprehensive Medicaid management and aligns with broader state and federal initiatives.
-
-**Transition to a Web-Enabled Presentation**:
-Move from the static, PDF-based MITA 3.0 to a dynamic, web-enabled format. This principle facilitates easier maintenance and continuous improvement by the community, allowing for real-time updates and enabling stakeholders to access the most current information. By fostering a collaborative environment, we encourage the sharing of insights and innovations, making MITA a more robust and adaptable framework for all users.
-
-These principles are foundational to the development and implementation of MITA 4.0, ensuring it effectively supports the evolving needs of Medicaid operations.
-
-# Versions of MITA
---- dev a change matrix showing dif between versions ---
-
-
-## Concepts
-
-- **Outcomes**: Define what SMAs aim to achieve through the implementation of MITA.
-- **Business Process Model**: Define common business processes for the Medicaid Enterprise.
-- **Maturity Model**: Illustrate the maturation of Medicaid operations over time.
-- **Capability Matrices**: Align business, information, and technical capabilities with the Maturity Model.
-- **State Self-Assessment (SS-A)**: Represent current and future business, information, and technical capabilities.
-
-MITA 4.0 ensures that technology decisions align with Medicaid business needs, optimizing adaptability, flexibility, interoperability, and data sharing. This evolution enables significant improvements in policy, decision-making, and daily operations. Explore the MITA 4.0 Framework to advance your State Medicaid Enterprise.
+For questions or support, please refer to the Contact Us section.

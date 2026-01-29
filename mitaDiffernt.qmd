@@ -1,27 +1,57 @@
-<section id="How is MITA 4.0 Different?" class="level1">
-<h1>How is MITA 4.0 Different?</h1>
-  <p>MITA 4.0 builds on MITA 3.0 to support Medicaid’s mission by helping states modernize their business processes and technology systems to improve the administration of their Medicaid programs. MITA 4.0 evolves and refines the MITA framework to better meet the changing needs of State Medicaid Agencies.</p>
- <style>
-    img {
-      cursor: pointer;
-    }
-  </style>
-<body>
-  <p>Click the image below to learn more:</p>
-  <img id="switchableImage" src="media/MITADif1.svg" alt="Image 1" class="img-fluid" style="display: block; margin: auto;" width="1500" height="1125">
+---
+title: "New Features in MITA 4.0"
+---
 
-  <script>
-    // JavaScript to handle the image switching
-    const imageElement = document.getElementById('switchableImage');
-    const image1 = 'media/MITADif1.svg'; // Path to the first image
-    const image2 = '../media/MITADif2.svg'; // Path to the second image
+## New Features in MITA 4.0
 
-    imageElement.addEventListener('click', () => {
-      // Check the current image source and toggle between the two images
-      if (imageElement.src.includes(image1)) {
-        imageElement.src = image2;
-      } else {
-        imageElement.src = image1;
-      }
-    });
-  </script>
+MITA 4.0 introduces several significant enhancements and new features that modernize the framework and make it more effective for state Medicaid agencies.
+
+### Key New Features
+
+#### 1. Outcomes-Based Planning
+MITA 4.0 places outcomes at the forefront of planning and implementation. This approach ensures that technology investments directly support measurable business outcomes and strategic goals.
+
+#### 2. Enhanced Capability Model
+- More granular capability definitions
+- Better alignment with modern Medicaid business processes
+- Improved mapping to business, information, and technical architectures
+
+#### 3. Modernized Reference Models
+- Updated Business Reference Model reflecting current Medicaid operations
+- Enhanced Information Architecture guidance
+- Contemporary Technical Architecture patterns and standards
+
+#### 4. Streamlined State Self-Assessment
+- Simplified assessment process
+- More actionable maturity criteria
+- Better integration with capability planning
+
+#### 5. Improved CMS Alignment
+- Direct mapping to CMS business processes
+- Better support for federal reporting requirements
+- Alignment with CMS policy and guidance
+
+#### 6. Enhanced Tools and Resources
+- ORBIT Capabilities (Outcomes,Roles, Business, Information and Technology)
+- Updated State Self-Assessment Tool
+- Comprehensive templates and quick reference guides
+
+### What's Different from MITA 3.0?
+
+MITA 4.0 represents a significant evolution from MITA 3.0:
+
+- **Focus on Outcomes**: Shift from purely technical architecture to business outcomes-driven approach
+- **Simplified Structure**: Streamlined models that are easier to understand and apply
+- **Modern Standards**: Updated to reflect current technology standards and best practices
+- **Practical Tools**: New and improved tools to support implementation
+- **Flexibility**: More adaptable to different state contexts and implementation approaches
+
+### Benefits of the New Features
+
+- Faster implementation and adoption
+- Better alignment with business needs
+- Improved measurement of success
+- Enhanced collaboration between business and IT stakeholders
+- More effective communication with CMS
+
+For more details on how to leverage these new features, see the [Effective Use of MITA 4.0](mitaAdopt.qmd) section.

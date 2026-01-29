@@ -4,108 +4,109 @@ project:
 
 
 book:
-  title: "Medicaid Information Technology Architecture"
+  title: "Medicaid Information Technology Architecture (MITA) 4.0"
+  description: "This website is a staging environment and is intended for testing and development purposes only. The content, functionality, and features on this site may be incomplete, inaccurate, or subject to change."
   output-file: "MITADemo"
   search: true
-  
   downloads: [docx, pdf]
-  
+  sidebar:
+    collapse-level: 1
   chapters:
-    - part:  Introduction to MITA 4.0
+    - index.qmd
+    - part: "Introduction"
       chapters:
-      - text: What is MITA?
-        file: index.qmd
-      - text: Why Adopt MITA 4.0?
-        file: mitaAdopt.qmd
-      - text: How is MITA 4.0 different?
-        file: mitaDiffernt.qmd
-    - text: "---"
-    - part: Outcomes Based Planning 
+        - text: "MITA 4.0 at a glance"
+          file: index.qmd
+        - text: "New Features"
+          file: mitaDiffernt.qmd
+        - text: "Benefits of Adoption"
+          file: mitaAdopt.qmd
+        - text: "Understanding MITA 4.0"
+          file: understandingMITA.qmd
+        - text: "Bridging MITA and CMS Business Processes"
+          file: alignMITA.qmd
+        - text: "Outcomes Based Planning"
+          file: outcomesBasedPlanning.qmd
+    - part: "MITA 4.0 Companion Guide"
       chapters:
-        - text: Introduction
-          file: outcomesIntro.qmd      
-        - text: What is an outcome?
-          file: outcomesDefintion.qmd      
-        - text: Objectives and Triggers
-          file: outcomesObjectives.qmd      
-        - text: Outcomes and MITA 4.0
-          file: outcomesMITA40.qmd 
-        - text: Outcomes-Based Planning Process
-          file: outcomesPlanning.qmd           
-        - text: Template
-          file: outcomesTemplate.qmd      
-    - text: "---"
-    - part: State Self-Assessment 
+        - text: "Welcome to the MITA 4.0 Companion Guide"
+          file: welcome.qmd
+        - text: "MITA 4.0 Process"
+          file: mitaProcess_improved.qmd
+        - text: "Scope your assessment"
+          file: scopeAssessment.qmd
+        - text: "Choose your Capabilities"
+          file: chooseCapabilities.qmd
+        - text: "Define your Architecture"
+          file: defineArchitecture.qmd
+        - text: "Finalize your State Self-Assessment"
+          file: finalizeSSA.qmd
+    - part: "Business Architecture"
       chapters:
-        - text: SS-A Playbook
-          file: alignMITA.qmd      
-    - text: "---"
-    - part: MITA Capability Reference Architecture
+        - text: "BA Guidelines"
+          file: baGuidelines.qmd
+        - text: "Business Capability Reference Model"
+          file: baCapabilityModel.qmd
+        - text: "Business Process Model"
+          file: baProcessModel.qmd
+        - text: "Business Maturity Criteria"
+          file: iaMaturityCriteria.qmd
+    - part: "Information Architecture"
       chapters:
-        - text: Model Overview
-          file: capabilityOverview.qmd
-        - text: Data Management Capabilities
-          file: IAcapabilityModel.qmd  
-        - text: IA Maturity Criteria
-          file: IAMaturityCriteria.qmd
-        - text: Data Reference Model
-          file: IAReferenceModel.qmd
-    - text: "---"
-    - part: Business Architecture
+        - text: "IA Guidelines"
+          file: iaGuidelines.qmd
+        - text: "Data Management Capability Reference Model"
+          file: iaDataCapabilityModel.qmd
+        - text: "Data Reference Model"
+          file: iaDataModel.qmd
+        - text: "IA Maturity Criteria"
+          file: iaMaturityCriteria.qmd
+        - text: "IA Viewpoints"
+          file: iaViewpoints.qmd
+    - part: "Technical Architecture"
       chapters:
-      - text: Business Architecture Introduction
-        file: 2-1BusinessArchitectureIntroduction.qmd
-      - text: MITA Capability Model
-        file: capabilityModel.qmd  
-      - text: Concept of Operations
-        file: conops.qmd
-      - text: Business Process Model
-        file: businessProcessModel.qmd
-
-    - text: "---"
-    - part: Information Architecture
+        - text: "TA Guidelines"
+          file: taGuidelines.qmd
+        - text: "Technical Capabilities Reference Model"
+          file: taCapabilityModel.qmd
+        - text: "Technical Service Reference Model"
+          file: taServiceModel.qmd
+        - text: "TA  Maturity Criteria"
+          file: taMaturityCriteria.qmd
+        - text: "TA Viewpoints"
+          file: taViewpoints.qmd
+    - part: "Tools and Resources"
       chapters:
-        - text: Information Architecture Introduction
-          file: InformationArchitectureIntroduction.qmd
-        - text: Data Management Capabilities
-          file: IAcapabilityModel.qmd  
-        - text: IA Maturity Criteria
-          file: IAMaturityCriteria.qmd
-        - text: Data Reference Model
-          file: IAReferenceModel.qmd
-    - text: "---"  
-    - part: Technical Architecture
-      chapters:
-        - text: TA Architecture Introduction
-          file: InformationArchitectureIntroduction.qmd
-        - text: Technical Management Capabilities
-          file: IAcapabilityModel.qmd  
-        - text: TA Maturity Criteria
-          file: IAMaturityCriteria.qmd
-        - text: TA Reference Model
-          file: IAReferenceModel.qmd
-    - text: "---"
-    - part: Artifacts and References
-      chapters:
-      - text: Standards and Conditions 
-        file: standardsAndConditions.qmd
-    - text: "---"
-    - part: Help Improve this Content
-
+        - text: "OBP Tool"
+          file: OBPtool.qmd
+        - text: "State Self-Assessment Tool"
+          file: ssatool.qmd
+        - text: "CONOPS Template"
+          file: conops.qmd
+        - text: "Roadmap Template"
+          file: roadmap.qmd
+        - text: "MITA Scorecard"
+          file: scorecard.qmd
+        - text: "SS-A Output Format"
+          file: ssaOutput.qmd
+        - text: "Quick Reference Guides"
+          file: mitaQuickRefGuide.qmd
+    - references.qmd
 
   navbar:
     background: "#015493"
     right:
       - text: "4.0"
 
-  page-footer: "© 2025 [The MITRE Corporation](mailto:jirving@mitre.org) / For Internal Use Only"
-
+  page-footer: "© 2026 [The Centers for Medicare & Medicaid Services (CMS) (mailto:smahoney@mitre.org)"
+ 
 
 format:
   html:
     theme:
-      - cosmo
+      - cosmo      
       - brand
+    css: styles.css
     number-sections: false
 
 
@@ -118,9 +119,4 @@ format:
     toc: true
     number-sections: false
     colorlinks: true
-
-
-
-
-
 
